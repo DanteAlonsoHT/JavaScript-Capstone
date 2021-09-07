@@ -1,4 +1,3 @@
-import { it } from "@jest/globals";
 import gotToCommentPage from './commentPage';
 
 const makeItemPage = () => {
@@ -25,6 +24,6 @@ document.getElementById('comment-0').addEventListener('click', (e) => {
   e.preventDefault();
   gotToCommentPage(0, 'item');
 });
-}
+};
 
-export default makeItemPage();
+export default makeItemPage;

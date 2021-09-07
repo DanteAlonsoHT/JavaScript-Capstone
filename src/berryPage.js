@@ -24,6 +24,6 @@ document.getElementById('comment-0').addEventListener('click', (e) => {
   e.preventDefault();
   gotToCommentPage(0, 'berry');
 });
-}
+};
 
-export default makeBerryPage();
+export default makeBerryPage;

@@ -8,36 +8,31 @@ const itemPage = document.getElementById('item');
 const berryPage = document.getElementById('berry');
 
 makePokemonPage();
-makeBerryPage();
-makeItemPage();
+ makeBerryPage();
+ makeItemPage();
 
-berryPage.addEventListener('click', (e)=>{
+berryPage.addEventListener('click', (e) => {
     e.preventDefault();
     console.log('clicked');
-    document.querySelector('pokemonPage').classList.add('d-none');
-    document.querySelector('itemPage').classList.add('d-none');
-    document.querySelector('berryPage').classList.remove('d-none');
-});
-
-pokePage.addEventListener('click', (e)=>{
-    e.preventDefault();
-    console.log('clicked');
-    document.querySelector('pokemonPage').classList.remove('d-none');
-    document.querySelector('itemPage').classList.add('d-none');
-    document.querySelector('berryPage').classList.add('d-none');
+    document.getElementById('pokePage').classList.add('d-none');
+    document.getElementById('itemPage').classList.add('d-none');
+    document.getElementById('berryPage').classList.remove('d-none');
 });
 
 
-itemPage.addEventListener('click', (e)=>{
+pokePage.addEventListener('click', (e) => {
     e.preventDefault();
     console.log('clicked');
-    document.querySelector('pokemonPage').classList.add('d-none');
-    document.querySelector('itemPage').classList.remove('d-none');
-    document.querySelector('berryPage').classList.add('d-none');
+    document.getElementById('pokePage').classList.remove('d-none');
+    document.getElementById('itemPage').classList.add('d-none');
+    document.getElementById('berryPage').classList.add('d-none');
 });
 
 
-
-// pokePage.addEventListener('click', (e)=>{
-//     document.querySelector()
-// });
+itemPage.addEventListener('click', (e) => {
+    e.preventDefault();
+    console.log('clicked');
+    document.getElementById('pokePage').classList.add('d-none');
+    document.getElementById('itemPage').classList.remove('d-none');
+    document.getElementById('berryPage').classList.add('d-none');
+});
