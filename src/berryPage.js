@@ -11,16 +11,16 @@ berryPage.innerHTML = `
     <p>ID: 3</p>
     <p>Growth time: 3</p>
     
-    <a class="btn" href="#" id="like-0"> like</a>
-    <a class="btn" href="#" id="comment-0"> comment</a>
-    <a class="btn" href="#" id="reserve-0"> reserve</a>
+    <a class="btn" href="#" id="like-berry-0"> like</a>
+    <a class="btn" href="#" id="comment-berry-0"> comment</a>
+    <a class="btn" href="#" id="reserve-berry-0"> reserve</a>
     
 </section>
 `;
 berryPage.id = 'berryPage';
 berryPage.classList.add('d-none');
 document.querySelector('main').appendChild(berryPage);
-document.getElementById('comment-0').addEventListener('click', (e) => {
+document.getElementById('comment-berry-0').addEventListener('click', (e) => {
   e.preventDefault();
   gotToCommentPage(0, 'berry');
 });

@@ -11,16 +11,16 @@ itemPage.innerHTML = `
     <p>ID: 3</p>
     <p>category: pokeball</p>
 
-    <a class="btn" href="#" id="like-0"> like</a>
-    <a class="btn" href="#" id="comment-0"> comment</a>
-    <a class="btn" href="#" id="reserve-0"> reserve</a>
+    <a class="btn" href="#" id="like-item-0"> like</a>
+    <a class="btn" href="#" id="comment-item-0"> comment</a>
+    <a class="btn" href="#" id="reserve-item-0"> reserve</a>
     
 </section>
 `;
 itemPage.id = 'itemPage';
 itemPage.classList.add('d-none');
 document.querySelector('main').appendChild(itemPage);
-document.getElementById('comment-0').addEventListener('click', (e) => {
+document.getElementById('comment-item-0').addEventListener('click', (e) => {
   e.preventDefault();
   gotToCommentPage(0, 'item');
 });

@@ -14,15 +14,15 @@ pokemonPage.innerHTML = `
     <p>Heigth: 4</p>
 
     
-    <a class="btn" href="#" id="like-0"> like</a>
-    <a class="btn" href="#" id="comment-0"> comment</a>
-    <a class="btn" href="#" id="reserve-0"> reserve</a>
+    <a class="btn" href="#" id="like-pokemon-0"> like</a>
+    <a class="btn" href="#" id="comment-pokemon-0"> comment</a>
+    <a class="btn" href="#" id="reserve-pokemon-0"> reserve</a>
     
 </section>
 `;
 pokemonPage.id = 'pokePage';
 document.querySelector('main').appendChild(pokemonPage);
-document.getElementById('comment-0').addEventListener('click', (e) => { 
+document.getElementById('comment-pokemon-0').addEventListener('click', (e) => { 
   e.preventDefault();
   gotToCommentPage(0, 'pokemon');
 });

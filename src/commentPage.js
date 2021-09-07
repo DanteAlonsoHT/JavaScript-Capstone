@@ -2,16 +2,16 @@ import makePokemonPage from './pokemonPage';
 import makeItemPage from './itemPage';
 import makeBerryPage from './berryPage';
 
-const gotToCommentPage = (num, type) => {
+const gotToCommentPage = (num, category) => {
   const mainTag = document.querySelector('main');
   mainTag.innerHTML = '';
-  if (type === 'item') {
+  if (category === 'item') {
     makeItemPage();
   }
-  else if (type === 'pokemon') {
+  else if (category === 'pokemon') {
     makePokemonPage();
   }
-  else if (type ==='berry') {
+  else if (category ==='berry') {
     makeBerryPage();
   }
   const commentsHeading = document.createElement('h3');
@@ -32,4 +32,4 @@ const gotToCommentPage = (num, type) => {
   mainTag.appendChild(commentForm);
 }
 
-export default gotToCommentPage();
+export default gotToCommentPage;
