@@ -1,3 +1,4 @@
+import { it } from "@jest/globals";
 
 const makeItemPage = () => {const itemPage =  document.createElement('article');
 
@@ -14,7 +15,8 @@ itemPage.innerHTML = `
     
 </section>
 `;
-itemPage.classList.add('invisible');
+itemPage.id = 'itemPage';
+itemPage.classList.add('d-none');
 document.querySelector('main').appendChild(itemPage);
 }
 

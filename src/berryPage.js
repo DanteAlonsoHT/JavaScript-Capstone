@@ -1,5 +1,5 @@
 
-const makeBerryPage = () => {const itemPage =  document.createElement('article');
+const makeBerryPage = () => {const berryPage =  document.createElement('article');
 
 berryPage.innerHTML = `
 <h2> Showing 1 berry</h2>
@@ -14,7 +14,8 @@ berryPage.innerHTML = `
     
 </section>
 `;
-berryPage.classList.add('invisible');
+berryPage.id = 'berryPage';
+berryPage.classList.add('d-none');
 document.querySelector('main').appendChild(berryPage);
 }
 

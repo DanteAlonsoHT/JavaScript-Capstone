@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "This is a project to consume an API and create a complete app",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "test": "jest --coverage",
     "dev": "webpack --mode development",

@@ -16,7 +16,7 @@ pokemonPage.innerHTML = `
     
 </section>
 `;
-
+pokemonPage.id = 'pokePage';
 document.querySelector('main').appendChild(pokemonPage);
 }
 
