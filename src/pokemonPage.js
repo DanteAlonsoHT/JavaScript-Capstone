@@ -5,7 +5,7 @@ const makePokemonPage = () => {
 const pokemonPage =  document.createElement('article');
 
 pokemonPage.innerHTML = `
-<h2> Showing 1 pokemon</h2>
+<h2 id="pokeTitle"> Showing x pokemon</h2>
 <section>
     <h4>pikachu</h4>
     <p>Pokedex ID: 25</p>

@@ -1,6 +1,7 @@
 import makePokemonPage from './pokemonPage';
 import makeItemPage from './itemPage';
 import makeBerryPage from './berryPage';
+import importPokemon from './importPokemon';
 // import css from './styles.css';
 
 const pokePage = document.getElementById('poke');
@@ -36,3 +37,5 @@ itemPage.addEventListener('click', (e) => {
     document.getElementById('itemPage').classList.remove('d-none');
     document.getElementById('berryPage').classList.add('d-none');
 });
+
+importPokemon();
