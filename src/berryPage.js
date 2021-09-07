@@ -1,6 +1,8 @@
 import gotToCommentPage from './commentPage';
 
-const makeBerryPage = () => {const berryPage =  document.createElement('article');
+const makeBerryPage = () => {
+
+const berryPage =  document.createElement('article');
 
 berryPage.innerHTML = `
 <h2> Showing 1 berry</h2>
@@ -18,7 +20,10 @@ berryPage.innerHTML = `
 berryPage.id = 'berryPage';
 berryPage.classList.add('d-none');
 document.querySelector('main').appendChild(berryPage);
-document.getElementById('comment-0').addEventListener('click', gotToCommentPage(0, 'berry'));
+document.getElementById('comment-0').addEventListener('click', (e) => {
+  e.preventDefault();
+  gotToCommentPage(0, 'berry');
+});
 }
 
 export default makeBerryPage();

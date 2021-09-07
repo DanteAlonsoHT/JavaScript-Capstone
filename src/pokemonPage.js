@@ -1,6 +1,8 @@
 import gotToCommentPage from './commentPage';
 
-const makePokemonPage = () => {const pokemonPage =  document.createElement('article');
+const makePokemonPage = () => {
+    
+const pokemonPage =  document.createElement('article');
 
 pokemonPage.innerHTML = `
 <h2> Showing 1 pokemon</h2>
@@ -20,7 +22,10 @@ pokemonPage.innerHTML = `
 `;
 pokemonPage.id = 'pokePage';
 document.querySelector('main').appendChild(pokemonPage);
-document.getElementById('comment-0').addEventListener('click', gotToCommentPage(0, 'pokemon'));
+document.getElementById('comment-0').addEventListener('click', (e) => { 
+  e.preventDefault();
+  gotToCommentPage(0, 'pokemon');
+});
 }
 
 export default makePokemonPage();

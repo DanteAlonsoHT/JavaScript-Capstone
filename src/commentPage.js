@@ -22,7 +22,7 @@ const gotToCommentPage = (num, type) => {
   mainTag.appendChild(formHeading);
   const commentForm = document.createElement('form');
   commentForm.innerHTML = `
-  <input class="invisible" id="number" name="number" type="number" value="${num}"></input>
+  <input class="d-none" id="number" name="number" type="number" value="${num}"></input>
   <br>
   <input id="name" name="name" type="text" placeholder="Your Name"></input>
   <br>

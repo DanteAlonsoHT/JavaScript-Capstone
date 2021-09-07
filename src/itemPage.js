@@ -1,7 +1,9 @@
 import { it } from "@jest/globals";
 import gotToCommentPage from './commentPage';
 
-const makeItemPage = () => {const itemPage =  document.createElement('article');
+const makeItemPage = () => {
+    
+const itemPage =  document.createElement('article');
 
 itemPage.innerHTML = `
 <h2> Showing 1 item</h2>
@@ -19,7 +21,10 @@ itemPage.innerHTML = `
 itemPage.id = 'itemPage';
 itemPage.classList.add('d-none');
 document.querySelector('main').appendChild(itemPage);
-document.getElementById('comment-0').addEventListener('click', gotToCommentPage(0, 'item'));
+document.getElementById('comment-0').addEventListener('click', (e) => {
+  e.preventDefault();
+  gotToCommentPage(0, 'item');
+});
 }
 
 export default makeItemPage();
