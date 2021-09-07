@@ -26,7 +26,7 @@ const gotToCommentPage = (num, category) => {
   <br>
   <input id="name" name="name" type="text" placeholder="Your Name"></input>
   <br>
-  <input id="insights" name="insights" type="textarea" placeholder="Your Insights"></input>
+  <textarea id="insights" name="insights" placeholder="Your Insights"></textarea>
   <br>
   <button id="commentBtn" type="submit">Comment</button>`;
   mainTag.appendChild(commentForm);
