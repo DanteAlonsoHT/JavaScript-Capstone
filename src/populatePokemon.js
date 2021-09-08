@@ -10,7 +10,7 @@ const populatePokemon = (list) => {
     list.forEach((element, index)=> {
        const div = document.createElement('section');
         div.innerHTML = `
-        <img class="card_img" alt="pokemon-${index}" src="${element.sprite}">
+        <img class="card_img" alt="pokemon-${index + 1}" src="${element.sprite}">
         <h4>${element.name}</h4>
         <p>Pokedex ID: ${index + 1}</p>
         <p>Weight: ${element.weight}</p>
@@ -27,7 +27,7 @@ const populatePokemon = (list) => {
         const commentLink = document.getElementById(`comment-pokemon-${index + 1}`);
         commentLink.addEventListener('click', (e) => {
           e.preventDefault(); 
-          gotToCommentPage(index, 'pokemon');
+          gotToCommentPage(index + 1, 'pokemon');
         });
     });
 }

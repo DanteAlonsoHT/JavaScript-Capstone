@@ -1,4 +1,8 @@
+
 import importItems from "./importItems";
+import gotToCommentPage from './commentPage';
+
+
 
 const makeItemPage = () => {
     

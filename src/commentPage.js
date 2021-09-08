@@ -1,11 +1,11 @@
-import makePokemonPage from './pokemonPage';
-import makeItemPage from './itemPage';
 import makeBerryPage from './berryPage';
-import displayPokemon from './showPokemon';
+import { displayPokemon, displayItem } from './showObject';
 
 const gotToCommentPage = (num, category) => {
   if (category === 'item') {
-    makeItemPage();
+    const itemPage = document.getElementById('itemPage');
+    itemPage.innerHTML = '';
+    displayItem(num);
   }
   else if (category === 'pokemon') {
     const pokePage = document.getElementById('pokePage');
@@ -18,9 +18,11 @@ const gotToCommentPage = (num, category) => {
   const mainTag = document.querySelector('main');
   const commentsHeading = document.createElement('h3');
   commentsHeading.innerText = 'Comments (0)';
+  commentsHeading.classList.add('form-heading');
   mainTag.appendChild(commentsHeading);
   const formHeading = document.createElement('h4');
-  formHeading.innerHTML = 'Add a comment';
+  formHeading.innerText= 'Add a comment';
+  formHeading.classList.add('form-heading');
   mainTag.appendChild(formHeading);
   const commentForm = document.createElement('form');
   commentForm.innerHTML = `
