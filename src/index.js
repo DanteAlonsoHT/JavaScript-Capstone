@@ -40,6 +40,6 @@ itemPage.addEventListener('click', (e) => {
     document.getElementById('berryPage').classList.add('d-none');
 });
 
-importPokemon();
+// importPokemon();
 importItems();
 importBerries();

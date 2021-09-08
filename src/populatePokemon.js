@@ -8,26 +8,18 @@ const populatePokemon = (list) => {
         div.innerHTML = `
         <img class="card_img" alt="pokemon-${index}" src="${element.sprite}">
         <h4>${element.name}</h4>
-        <p>Pokedex ID: ${index}</p>
+        <p>Pokedex ID: ${index + 1}</p>
         <p>Weight: ${element.weight}</p>
-        <p>Height: ${element.height}</p>`;
-        const likeLink = document.createElement('a');
-        likeLink.classList.add('btn');
-        likeLink.id = `like-pokemon-${index}`;
-        const commentLink = document.createElement('a');
-        commentLink.classList.add('btn');
-        commentLink.id = `comment-pokemon-${index}`;
+        <p>Height: ${element.height}</p>
+        <a class="btn" href="#" id="like-pokemon-${index + 1}"> like</a>
+        <a class="btn" href="#" id="comment-pokemon-${index + 1}"> comment</a>
+        <a class="btn" href="#" id="reserve-pokemon-${index + 1}"> reserve</a>`;
+        pokePage.appendChild(div);
+        const commentLink = document.getElementById(`comment-pokemon-${index + 1}`);
         commentLink.addEventListener('click', (e) => {
           e.preventDefault(); 
           gotToCommentPage(index, 'pokemon');
         });
-        const reserveLink = document.createElement('a');
-        reserveLink.classList.add('btn');
-        reserveLink.id = `reserve-pokemon-${index}`;
-        div.appendChild(likeLink);
-        div.appendChild(commentLink);
-        div.appendChild(reserveLink);
-        pokePage.appendChild(div);
     });
 }
 

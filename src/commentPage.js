@@ -4,17 +4,18 @@ import makeBerryPage from './berryPage';
 import displayPokemon from './showPokemon';
 
 const gotToCommentPage = (num, category) => {
-  const mainTag = document.querySelector('main');
-  mainTag.innerHTML = '';
   if (category === 'item') {
     makeItemPage();
   }
   else if (category === 'pokemon') {
+    const pokePage = document.getElementById('pokePage');
+    pokePage.innerHTML = '';
     displayPokemon(num);
   }
   else if (category ==='berry') {
     makeBerryPage();
   }
+  const mainTag = document.querySelector('main');
   const commentsHeading = document.createElement('h3');
   commentsHeading.innerText = 'Comments (0)';
   mainTag.appendChild(commentsHeading);
