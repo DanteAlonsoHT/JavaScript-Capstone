@@ -12,10 +12,12 @@ pokemonPage.innerHTML = `
 `;
 pokemonPage.id = 'pokePage';
 document.querySelector('main').appendChild(pokemonPage);
-document.getElementById('comment-pokemon-0').addEventListener('click', (e) => { 
-  e.preventDefault();
-  gotToCommentPage(0, 'pokemon');
-});
+
+// document.getElementById('comment-pokemon-0').addEventListener('click', (e) => { 
+//   e.preventDefault();
+//   gotToCommentPage(0, 'pokemon');
+// });
+
 };
 
 export default makePokemonPage;

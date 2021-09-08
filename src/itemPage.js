@@ -13,10 +13,10 @@ itemPage.innerHTML = `
 itemPage.id = 'itemPage';
 itemPage.classList.add('d-none');
 document.querySelector('main').appendChild(itemPage);
-document.getElementById('comment-item-0').addEventListener('click', (e) => {
-  e.preventDefault();
-  gotToCommentPage(0, 'item');
-});
+// document.getElementById('comment-item-0').addEventListener('click', (e) => {
+//   e.preventDefault();
+//   gotToCommentPage(0, 'item');
+// });
 };
 
 export default makeItemPage;
