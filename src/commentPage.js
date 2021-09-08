@@ -18,9 +18,11 @@ const gotToCommentPage = (num, category) => {
   const mainTag = document.querySelector('main');
   const commentsHeading = document.createElement('h3');
   commentsHeading.innerText = 'Comments (0)';
+  commentsHeading.classList.add('form-heading');
   mainTag.appendChild(commentsHeading);
   const formHeading = document.createElement('h4');
-  formHeading.innerHTML = 'Add a comment';
+  formHeading.innerText= 'Add a comment';
+  formHeading.classList.add('form-heading');
   mainTag.appendChild(formHeading);
   const commentForm = document.createElement('form');
   commentForm.innerHTML = `
