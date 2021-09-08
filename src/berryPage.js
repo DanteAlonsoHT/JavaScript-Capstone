@@ -1,22 +1,19 @@
-import gotToCommentPage from './commentPage';
+import importBerries from "./importBerries";
 
 const makeBerryPage = () => {
 
 const berryPage =  document.createElement('article');
 
 berryPage.innerHTML = `
-<h2 id="berriesTitle"> Showing 1 berry</h2>
-<section>
+<h2 id="berriesTitle"> Showing x berry</h2>
+<section id="berryPage" class="d-flex flex-wrap">
     
-</section>
-`;
-berryPage.id = 'berryPage';
+</section>`;
+
+berryPage.id = "berry-article"
 berryPage.classList.add('d-none');
 document.querySelector('main').appendChild(berryPage);
-// document.getElementById('comment-berry-0').addEventListener('click', (e) => {
-//   e.preventDefault();
-//   gotToCommentPage(0, 'berry');
-// });
+importBerries()
 };
 
 export default makeBerryPage;

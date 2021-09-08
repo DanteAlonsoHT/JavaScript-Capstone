@@ -1,22 +1,19 @@
-import gotToCommentPage from './commentPage';
+import importItems from "./importItems";
 
 const makeItemPage = () => {
     
 const itemPage =  document.createElement('article');
 
 itemPage.innerHTML = `
-<h2 id="itemsTitle"> Showing 1 item</h2>
-<section>
+<h2 id="itemsTitle"> Showing x item</h2>
+<section id="itemPage" class="d-flex flex-wrap">
 
-</section>
-`;
-itemPage.id = 'itemPage';
+</section>`;
+itemPage.id = 'item-article'
 itemPage.classList.add('d-none');
+
 document.querySelector('main').appendChild(itemPage);
-// document.getElementById('comment-item-0').addEventListener('click', (e) => {
-//   e.preventDefault();
-//   gotToCommentPage(0, 'item');
-// });
+importItems();
 };
 
 export default makeItemPage;

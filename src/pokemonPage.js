@@ -1,4 +1,3 @@
-import gotToCommentPage from './commentPage';
 import importPokemon from './importPokemon';
 
 const makePokemonPage = () => {
@@ -6,17 +5,14 @@ const makePokemonPage = () => {
 const pokemonPage =  document.createElement('article');
 
 pokemonPage.innerHTML = `
-<h2 id="pokeTitle"> Showing x pokemon</h2>
-<section>
+<h2 id="pokeTitle" > Showing x pokemon</h2>
+<section id='pokePage' class="d-flex flex-wrap">
 
 </section>`;
-pokemonPage.id = 'pokePage';
+pokemonPage.id = 'pokemon-article'
 document.querySelector('main').appendChild(pokemonPage);
+
 importPokemon();
-// document.getElementById('comment-pokemon-0').addEventListener('click', (e) => { 
-//   e.preventDefault();
-//   gotToCommentPage(0, 'pokemon');
-// });
 };
 
 export default makePokemonPage;
