@@ -1,6 +1,7 @@
 import makePokemonPage from './pokemonPage';
 import makeItemPage from './itemPage';
 import makeBerryPage from './berryPage';
+import displayPokemon from './showPokemon';
 
 const gotToCommentPage = (num, category) => {
   const mainTag = document.querySelector('main');
@@ -9,7 +10,7 @@ const gotToCommentPage = (num, category) => {
     makeItemPage();
   }
   else if (category === 'pokemon') {
-    makePokemonPage();
+    displayPokemon(num);
   }
   else if (category ==='berry') {
     makeBerryPage();
