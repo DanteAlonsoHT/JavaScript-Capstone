@@ -3,6 +3,7 @@ import makeItemPage from './itemPage';
 import makeBerryPage from './berryPage';
 import importPokemon from './importPokemon';
 import importItems from './importItems';
+import importBerries from './importBerries';
 // import css from './styles.css';
 
 const pokePage = document.getElementById('poke');
@@ -41,3 +42,4 @@ itemPage.addEventListener('click', (e) => {
 
 importPokemon();
 importItems();
+importBerries();

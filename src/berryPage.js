@@ -5,7 +5,7 @@ const makeBerryPage = () => {
 const berryPage =  document.createElement('article');
 
 berryPage.innerHTML = `
-<h2> Showing 1 berry</h2>
+<h2 id="berriesTitle"> Showing 1 berry</h2>
 <section>
     <h4>pecha-berry</h4>
     <p>ID: 3</p>
