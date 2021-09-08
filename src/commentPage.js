@@ -1,11 +1,11 @@
-import makePokemonPage from './pokemonPage';
-import makeItemPage from './itemPage';
 import makeBerryPage from './berryPage';
-import displayPokemon from './showPokemon';
+import { displayPokemon, displayItem } from './showObject';
 
 const gotToCommentPage = (num, category) => {
   if (category === 'item') {
-    makeItemPage();
+    const itemPage = document.getElementById('itemPage');
+    itemPage.innerHTML = '';
+    displayItem(num);
   }
   else if (category === 'pokemon') {
     const pokePage = document.getElementById('pokePage');

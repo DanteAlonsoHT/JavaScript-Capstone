@@ -1,11 +1,12 @@
 import gotToCommentPage from './commentPage';
+import importItems from './importItems';
 
 const makeItemPage = () => {
     
 const itemPage =  document.createElement('article');
 
 itemPage.innerHTML = `
-<h2 id="itemsTitle"> Showing 1 item</h2>
+<h2 id="itemsTitle"> Showing 10 items</h2>
 <section>
 
 </section>
@@ -13,10 +14,7 @@ itemPage.innerHTML = `
 itemPage.id = 'itemPage';
 itemPage.classList.add('d-none');
 document.querySelector('main').appendChild(itemPage);
-// document.getElementById('comment-item-0').addEventListener('click', (e) => {
-//   e.preventDefault();
-//   gotToCommentPage(0, 'item');
-// });
+importItems();
 };
 
 export default makeItemPage;

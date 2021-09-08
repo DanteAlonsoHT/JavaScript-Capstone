@@ -41,5 +41,5 @@ itemPage.addEventListener('click', (e) => {
 });
 
 // importPokemon();
-importItems();
+// importItems();
 importBerries();
