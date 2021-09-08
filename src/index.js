@@ -4,7 +4,7 @@ import makeBerryPage from './berryPage';
 import importPokemon from './importPokemon';
 import importItems from './importItems';
 import importBerries from './importBerries';
-// import css from './styles.css';
+import css from './styles.css';
 
 const pokePage = document.getElementById('poke');
 const itemPage = document.getElementById('item');
