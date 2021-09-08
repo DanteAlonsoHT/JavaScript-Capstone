@@ -7,14 +7,7 @@ const itemPage =  document.createElement('article');
 itemPage.innerHTML = `
 <h2 id="itemsTitle"> Showing 1 item</h2>
 <section>
-    <h4>Great ball</h4>
-    <p>ID: 3</p>
-    <p>category: pokeball</p>
 
-    <a class="btn" href="#" id="like-item-0"> like</a>
-    <a class="btn" href="#" id="comment-item-0"> comment</a>
-    <a class="btn" href="#" id="reserve-item-0"> reserve</a>
-    
 </section>
 `;
 itemPage.id = 'itemPage';
