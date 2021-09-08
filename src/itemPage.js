@@ -5,7 +5,7 @@ const makeItemPage = () => {
 const itemPage =  document.createElement('article');
 
 itemPage.innerHTML = `
-<h2> Showing 1 item</h2>
+<h2 id="itemsTitle"> Showing 1 item</h2>
 <section>
     <h4>Great ball</h4>
     <p>ID: 3</p>
