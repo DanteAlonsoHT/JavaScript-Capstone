@@ -13,6 +13,7 @@ for (let i = 0; i<10 ; i++) {
     pokemon.id = obj.id;
     pokemon.weight = obj.weight;
     pokemon.height = obj.height;
+    pokemon.sprite = obj.sprites.front_default;
     list.push(pokemon);
 }
 
