@@ -1,10 +1,7 @@
 import makePokemonPage from './pokemonPage';
 import makeItemPage from './itemPage';
 import makeBerryPage from './berryPage';
-import importPokemon from './importPokemon';
-import importItems from './importItems';
-import importBerries from './importBerries';
-// import css from './styles.css';
+import css from './styles.css';
 
 const pokePage = document.getElementById('poke');
 const itemPage = document.getElementById('item');
@@ -17,7 +14,15 @@ const berryPage = document.getElementById('berry');
 berryPage.addEventListener('click', (e) => {
     e.preventDefault();
     console.log('clicked');
-    const mainTag = document.querySelector('main');
+
+    document.getElementById('pokemon-article').classList.add('d-none');
+    document.getElementById('item-article').classList.add('d-none');
+    document.getElementById('berry-article').classList.remove('d-none');
+    pokePage.classList.remove('current');
+    itemPage.classList.remove('current');
+    berryPage.classList.add('current');
+  
+   const mainTag = document.querySelector('main');
     const formArr = document.getElementsByTagName('form');
     for (let i = 0; i < formArr.length; i += 1) {
       mainTag.removeChild(formArr[i]);
@@ -33,15 +38,19 @@ berryPage.addEventListener('click', (e) => {
     }
     berryPage.firstChild.innerText = `Showing 10 berries`;
     importBerries();
-    document.getElementById('pokePage').classList.add('d-none');
-    document.getElementById('itemPage').classList.add('d-none');
-    document.getElementById('berryPage').classList.remove('d-none');
 });
 
 
 pokePage.addEventListener('click', (e) => {
     e.preventDefault();
     console.log('clicked');
+
+    document.getElementById('pokemon-article').classList.remove('d-none');
+    document.getElementById('item-article').classList.add('d-none');
+    document.getElementById('berry-article').classList.add('d-none');
+    pokePage.classList.add('current');
+    itemPage.classList.remove('current');
+    berryPage.classList.remove('current');
     const mainTag = document.querySelector('main');
     const formArr = document.getElementsByTagName('form');
     for (let i = 0; i < formArr.length; i += 1) {
@@ -58,15 +67,20 @@ pokePage.addEventListener('click', (e) => {
     }
     pokePage.firstChild.innerText = `Showing 10 pokemon`;
     importPokemon();
-    document.getElementById('pokePage').classList.remove('d-none');
-    document.getElementById('itemPage').classList.add('d-none');
-    document.getElementById('berryPage').classList.add('d-none');
+
 });
 
 
 itemPage.addEventListener('click', (e) => {
     e.preventDefault();
     console.log('clicked');
+    document.getElementById('pokemon-article').classList.add('d-none');
+    document.getElementById('item-article').classList.remove('d-none');
+    document.getElementById('berry-article').classList.add('d-none');
+    pokePage.classList.remove('current');
+    itemPage.classList.add('current');
+    berryPage.classList.remove('current');
+
     const mainTag = document.querySelector('main');
     const formArr = document.getElementsByTagName('form');
     for (let i = 0; i < formArr.length; i += 1) {
@@ -83,11 +97,6 @@ itemPage.addEventListener('click', (e) => {
     }
     itemPage.firstChild.innerText = `Showing 10 items`;
     importItems();
-    document.getElementById('pokePage').classList.add('d-none');
-    document.getElementById('itemPage').classList.remove('d-none');
-    document.getElementById('berryPage').classList.add('d-none');
 });
 
-// importPokemon();
-// importItems();
-importBerries();
+

@@ -5,7 +5,7 @@ const importItems = async () =>{
 const list = []
 
 
-for (let i = 0; i<10 ; i++) {
+for (let i = 0; i<19 ; i++) {
     let response = await fetch(`https://pokeapi.co/api/v2/item/${i+1}`);
     let obj = await response.json();
     let  item = new Object();
