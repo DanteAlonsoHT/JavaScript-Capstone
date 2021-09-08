@@ -4,6 +4,7 @@ const displayPokemon = async (id) => {
   let pokemon = await response.json();
   const pokePage = document.getElementById('pokePage');
   let div = document.createElement('section');
+  div.classList.add('displayedObj');
   div.innerHTML = `
   <img class="card_img" alt="pokemon-${pokemon.id}" src="${pokemon.sprite}">
   <h4>${pokemon.name}</h4>
@@ -22,6 +23,7 @@ const displayItem = async (id) => {
   let item = await response.json();
   const itemPage = document.getElementById('itemPage');
   let div = document.createElement('section');
+  div.classList.add('displayedObj');
   div.innerHTML = `
   <img class="card_img" alt="item-${item.id}" src="${item.sprite}">
   <h4>${item.name}</h4>
