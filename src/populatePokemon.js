@@ -27,7 +27,7 @@ const populatePokemon = (list) => {
         const commentLink = document.getElementById(`comment-pokemon-${index + 1}`);
         commentLink.addEventListener('click', (e) => {
           e.preventDefault(); 
-          gotToCommentPage(index + 1, 'pokemon');
+          gotToCommentPage(index + 1, 'pokemon', element.name);
         });
     });
 }

@@ -21,7 +21,7 @@ const populateBerries = (list) => {
         const commentLink = document.getElementById(`comment-berry-${index + 1}`);
         commentLink.addEventListener('click', (e) => {
           e.preventDefault();
-          gotToCommentPage(index + 1, 'berry');
+          gotToCommentPage(index + 1, 'berry', element.name);
         });
     });
 }

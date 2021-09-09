@@ -23,7 +23,7 @@ const populateItems = (list) => {
         const commentLink = document.getElementById(`comment-item-${index + 1}`);
         commentLink.addEventListener('click', (e) => {
             e.preventDefault(); 
-            gotToCommentPage(index + 1, 'item');
+            gotToCommentPage(index + 1, 'item', element.name);
         });
     });
 }

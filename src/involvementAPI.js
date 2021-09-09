@@ -1,5 +1,5 @@
 
-const requestURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/javascriptCapstoneAPI-DJY/comments';
+const commentURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/javascriptCapstoneAPI-DJY/comments';
 
 // const getAppID = async () => {
 //   const response = fetch(requestURL, {
@@ -14,3 +14,14 @@ const requestURL = 'https://us-central1-involvement-api.cloudfunctions.net/capst
 // };
 
 // export { getAppID };
+
+const postComment = async (objName, userName, content) => {
+  await fetch(commentURL + `?item_id=${objName}`, {
+    mode: 'cors',
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ username: userName, comment: content }),
+    }).then((response) => response.json());
+};
+
+export { postComment };

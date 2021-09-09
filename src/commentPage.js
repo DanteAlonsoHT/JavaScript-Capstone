@@ -1,6 +1,7 @@
+import { postComment } from './involvementAPI';
 import { displayPokemon, displayItem, displayBerry } from './showObject';
 
-const gotToCommentPage = (num, category) => {
+const gotToCommentPage = (num, category, iName) => {
   if (category === 'item') {
     const itemPage = document.getElementById('item-article');
     itemPage.innerHTML = '';
@@ -28,14 +29,18 @@ const gotToCommentPage = (num, category) => {
     mainTag.appendChild(formHeading);
     const commentForm = document.createElement('form');
     commentForm.innerHTML = `
-      <input class="d-none" id="number" name="number" type="number" value="${num}"></input>
+      <input id="commenter-name" name="name" type="text" placeholder="Your Name" required></input>
       <br>
-      <input id="name" name="name" type="text" placeholder="Your Name"></input>
-      <br>
-      <textarea id="insights" name="insights" placeholder="Your Insights"></textarea>
+      <textarea id="comment-insights" name="insights" placeholder="Your Insights" required></textarea>
       <br>
       <button id="commentBtn" type="submit">Comment</button>`;
     mainTag.appendChild(commentForm);
+    commentForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('commenter-name').value;
+      const insights = document.getElementById('comment-insights').value;
+      postComment(iName, name, insights);
+    }); 
   }
 }
 
