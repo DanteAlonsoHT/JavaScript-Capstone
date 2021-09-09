@@ -10,7 +10,7 @@ berryPage.innerHTML = `
     
 </section>`;
 
-berryPage.id = "berry-article"
+berryPage.id = 'berry-article';
 berryPage.classList.add('d-none');
 document.querySelector('main').appendChild(berryPage);
 importBerries();

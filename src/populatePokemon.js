@@ -5,7 +5,7 @@ const populatePokemon = (list) => {
   const pokePage = document.getElementById('pokePage');
 
     document.getElementById('pokeTitle').innerText = `Showing ${list.length} pokemon`;
-    document.getElementById('poke').innerText =`Pokemon(${list.length})`
+    document.getElementById('poke').innerText =`Pokemon(${list.length})`;
 
     list.forEach((element, index)=> {
        const div = document.createElement('section');

@@ -1,6 +1,9 @@
 import makePokemonPage from './pokemonPage';
 import makeItemPage from './itemPage';
 import makeBerryPage from './berryPage';
+import importBerries from './importBerries';
+import importItems from './importItems';
+import importPokemon from './importPokemon';
 import css from './styles.css';
 
 const pokePage = document.getElementById('poke');
@@ -33,12 +36,16 @@ berryPage.addEventListener('click', (e) => {
         mainTag.removeChild(headingArr[0]);
       }
     }
-    const berryAtcl = document.getElementById('berryPage');
+    const berryAtcl = document.getElementById('berry-article');
     const showElements = berryAtcl.getElementsByClassName('displayedObj');
     for (let j = 0; j < showElements.length; j += 1) {
       berryAtcl.removeChild(showElements[j]);
     }
-    berryPage.firstChild.innerText = `Showing 10 berries`;
+    const div = document.createElement('section');
+    div.id = 'berryPage';
+    div.classList.add('d-flex');
+    div.classList.add('flex-wrap');
+    berryAtcl.appendChild(div);
     importBerries();
 });
 
@@ -64,14 +71,17 @@ pokePage.addEventListener('click', (e) => {
         mainTag.removeChild(headingArr[0]);
       }
     }
-    const pokeAtcl = document.getElementById('pokePage');
+    const pokeAtcl = document.getElementById('pokemon-article');
     const showElements = pokeAtcl.getElementsByClassName('displayedObj');
     for (let j = 0; j < showElements.length; j += 1) {
       pokeAtcl.removeChild(showElements[j]);
     }
-    pokePage.firstChild.innerText = `Showing 10 pokemon`;
+    const div = document.createElement('section');
+    div.id = 'pokePage';
+    div.classList.add('d-flex');
+    div.classList.add('flex-wrap');
+    pokeAtcl.appendChild(div);
     importPokemon();
-
 });
 
 
@@ -96,11 +106,15 @@ itemPage.addEventListener('click', (e) => {
         mainTag.removeChild(headingArr[0]);
       }
     }
-    const itemAtcl = document.getElementById('itemPage');
+    const itemAtcl = document.getElementById('item-article');
     const showElements = itemAtcl.getElementsByClassName('displayedObj');
     for (let j = 0; j < showElements.length; j += 1) {
       itemAtcl.removeChild(showElements[j]);
     }
-    itemPage.firstChild.innerText = `Showing 10 items`;
+    const div = document.createElement('section');
+    div.id = 'itemPage';
+    div.classList.add('d-flex');
+    div.classList.add('flex-wrap');
+    itemAtcl.appendChild(div);
     importItems();
 });

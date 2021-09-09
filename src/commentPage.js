@@ -2,17 +2,17 @@ import { displayPokemon, displayItem, displayBerry } from './showObject';
 
 const gotToCommentPage = (num, category) => {
   if (category === 'item') {
-    const itemPage = document.getElementById('itemPage');
+    const itemPage = document.getElementById('item-article');
     itemPage.innerHTML = '';
     displayItem(num);
   }
   else if (category === 'pokemon') {
-    const pokePage = document.getElementById('pokePage');
+    const pokePage = document.getElementById('pokemon-article');
     pokePage.innerHTML = '';
     displayPokemon(num);
   }
   else if (category ==='berry') {
-    const berryPage = document.getElementById('berryPage');
+    const berryPage = document.getElementById('berry-article');
     berryPage = '';
     displayBerry(num);
   }
