@@ -44,3 +44,15 @@ footer {
     border-top-left-radius: 10%;
     border-top-right-radius: 10%;
 }
+
+#nav-logo {
+    height: 10vh;
+    width: 10vh;
+    transition: 1s;
+}
+
+#nav-logo:hover {
+    height: 10vh;
+    width: 10vh;
+    transform: rotate(180deg);
+}
