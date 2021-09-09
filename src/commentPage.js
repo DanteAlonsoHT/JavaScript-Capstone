@@ -6,13 +6,11 @@ const gotToCommentPage = (num, category) => {
     const itemPage = document.getElementById('itemPage');
     itemPage.innerHTML = '';
     displayItem(num);
-  }
-  else if (category === 'pokemon') {
+  } else if (category === 'pokemon') {
     const pokePage = document.getElementById('pokePage');
     pokePage.innerHTML = '';
     displayPokemon(num);
-  }
-  else if (category ==='berry') {
+  } else if (category === 'berry') {
     makeBerryPage();
   }
   const mainTag = document.querySelector('main');
@@ -21,7 +19,7 @@ const gotToCommentPage = (num, category) => {
   commentsHeading.classList.add('form-heading');
   mainTag.appendChild(commentsHeading);
   const formHeading = document.createElement('h4');
-  formHeading.innerText= 'Add a comment';
+  formHeading.innerText = 'Add a comment';
   formHeading.classList.add('form-heading');
   mainTag.appendChild(formHeading);
   const commentForm = document.createElement('form');
@@ -34,6 +32,6 @@ const gotToCommentPage = (num, category) => {
   <br>
   <button id="commentBtn" type="submit">Comment</button>`;
   mainTag.appendChild(commentForm);
-}
+};
 
 export default gotToCommentPage;
