@@ -33,7 +33,8 @@ berryPage.addEventListener('click', (e) => {
     }
     const headingArr = document.getElementsByClassName('form-heading');
     if (headingArr.length > 0) {
-      for (let k = 0; k < 2; k += 1) {
+      const formElCount = headingArr.length;
+      for (let k = 0; k < formElCount; k += 1) {
         mainTag.removeChild(headingArr[0]);
       }
     }
@@ -68,7 +69,8 @@ pokePage.addEventListener('click', (e) => {
     }
     const headingArr = document.getElementsByClassName('form-heading');
     if (headingArr.length > 0) {
-      for (let k = 0; k < 2; k += 1) {
+      const formElCount = headingArr.length;
+      for (let k = 0; k < formElCount; k += 1) {
         mainTag.removeChild(headingArr[0]);
       }
     }
@@ -103,7 +105,8 @@ itemPage.addEventListener('click', (e) => {
     }
     const headingArr = document.getElementsByClassName('form-heading');
     if (headingArr.length > 0) {
-      for (let k = 0; k < 2; k += 1) {
+      const formElCount = headingArr.length;
+      for (let k = 0; k < formElCount; k += 1) {
         mainTag.removeChild(headingArr[0]);
       }
     }
