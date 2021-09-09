@@ -13,10 +13,10 @@ const populateItems = (list) => {
         <p>category: ${element.category}</p>
 
         
-        <div class="d-inline">
-           <a class="btn" href="#" id="like-item-${index + 1}"> like</a>
-          <a class="btn" href="#" id="comment-item-${index + 1}"> comment</a>
-          <a class="btn" href="#" id="reserve-item-${index + 1}"> reserve</a>
+        <div class="d-inline links">
+           <a class="btn custom-link" href="#" id="like-item-${index + 1}"> like</a>
+          <a class="btn custom-link" href="#" id="comment-item-${index + 1}"> comment</a>
+          <a class="btn custom-link" href="#" id="reserve-item-${index + 1}"> reserve</a>
         </div>`;
         div.classList.add('block');
         itemsPage.appendChild(div);

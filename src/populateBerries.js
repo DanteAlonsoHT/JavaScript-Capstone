@@ -11,10 +11,10 @@ const populateBerries = (list) => {
         <h4>${element.name}</h4>
         <p>Item ID: ${element.id}</p>
         <p>max harvest: ${element.maxHarvest}</p>
-        <div class="d-inline">
-            <a class="btn" href="#" id="like-berry-${index}"> like</a>
-            <a class="btn" href="#" id="comment-berry-${index}"> comment</a>
-            <a class="btn" href="#" id="reserve-berry-${index}"> reserve</a>
+        <div class="d-inline links">
+            <a class="btn custom-link" href="#" id="like-berry-${index}"> like</a>
+            <a class="btn custom-link" href="#" id="comment-berry-${index}"> comment</a>
+            <a class="btn custom-link" href="#" id="reserve-berry-${index}"> reserve</a>
         </div>`;
         div.classList.add('block');
         berriesPage.appendChild(div);

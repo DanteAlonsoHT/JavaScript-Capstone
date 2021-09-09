@@ -15,10 +15,10 @@ const populatePokemon = (list) => {
         <p>Pokedex ID: ${index + 1}</p>
         <p>Weight: ${element.weight}</p>
         <p>Height: ${element.height}</p>
-        <div class="d-inline">
-          <a class="btn" href="#" id="like-pokemon-${index + 1}"> like</a>
-          <a class="btn" href="#" id="comment-pokemon-${index + 1}"> comment</a>
-          <a class="btn" href="#" id="reserve-pokemon-${index + 1}"> reserve</a>
+        <div class="d-inline links">
+          <a class="btn custom-link fix" href="#" id="like-pokemon-${index + 1}"> like</a>
+          <a class="btn custom-link fix" href="#" id="comment-pokemon-${index + 1}"> comment</a>
+          <a class="btn custom-link fix" href="#" id="reserve-pokemon-${index + 1}"> reserve</a>
         </div>`;
         
         div.classList.add('block');
