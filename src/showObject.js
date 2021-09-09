@@ -1,4 +1,3 @@
-
 const displayPokemon = async (id) => {
     let response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
     let pokemon = await response.json();

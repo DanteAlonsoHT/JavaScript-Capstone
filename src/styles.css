@@ -1,58 +1,89 @@
 .invisible {
-    display: none;
+  display: none;
+}
+
+body {
+  background-color: rgb(153, 241, 241);
+}
+
+h2 {
+  text-align: center;
 }
 
 .navbar {
-    background-color: rgb(255, 38, 0);
-    height: 12vh;
-    border-bottom-left-radius: 10%;
-    border-bottom-right-radius: 10%;
+  background-color: rgb(219, 33, 0);
+  height: 12vh;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-width: 6px;
+  border-bottom-color: black;
+  border-bottom-style: solid;
 }
 
-.nav-link {
-    font-size: 20px;
-    color: black;
-    transition: 0.2s;
+.custom-link .nav-link {
+  font-size: 20px;
+  color: black;
+  transition: 0.2s;
 }
 
+.custom-link,
 .nav-link:visited,
 .current,
 .nav-link:hover {
-    color: black;
-    background-color: rgb(196, 29, 0);
-    border-radius: 15px;
+  color: black;
+  background-color: rgb(196, 29, 0);
+  border-radius: 15px;
 }
 
 .block {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 20vw;
-    border-radius: 10px;
-    height: max-content;
-    background-color: rgb(255, 38, 0) ;
-    margin: 10px 32px 10px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20vw;
+  border-radius: 10px;
+  border-width: 2px;
+  border-color: black;
+  border-style: solid;
+  height: max-content;
+  background-color: rgb(219, 33, 0);
+  margin: 10px 32px 10px 32px;
 }
 
 img {
-    width: 10vw;
+  width: 10vw;
 }
 
 footer {
-    background-color: rgb(255, 38, 0);
-    height: 4vh;
-    border-top-left-radius: 10%;
-    border-top-right-radius: 10%;
+  background-color: rgb(219, 33, 0);
+  height: 4vh;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-top-width: 2px;
+  border-top-color: black;
+  border-top-style: solid;
 }
 
 #nav-logo {
-    height: 10vh;
-    width: 10vh;
-    transition: 1s;
+  height: 9vh;
+  width: 9vh;
+  transition: 1s;
+}
+
+.links {
+  padding: 2px;
+  margin: 2px;
+  display: inline-block;
+}
+
+.liked {
+  background-color: yellow;
+}
+
+.fix {
+  font-size: 14px;
+  width: min-content;
 }
 
 #nav-logo:hover {
-    height: 10vh;
-    width: 10vh;
-    transform: rotate(180deg);
+  transform: rotate(180deg);
 }

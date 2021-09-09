@@ -1,3 +1,4 @@
+/*eslint-disable no-unused-vars*/
 import makePokemonPage from './pokemonPage';
 import makeItemPage from './itemPage';
 import makeBerryPage from './berryPage';
@@ -11,13 +12,12 @@ const pokePage = document.getElementById('poke');
 const itemPage = document.getElementById('item');
 const berryPage = document.getElementById('berry');
 
- makePokemonPage();
- makeBerryPage();
- makeItemPage();
+makePokemonPage();
+makeBerryPage();
+makeItemPage();
 
 berryPage.addEventListener('click', (e) => {
-    e.preventDefault();
-    console.log('clicked');
+  e.preventDefault();
 
     document.getElementById('pokemon-article').classList.add('d-none');
     document.getElementById('item-article').classList.add('d-none');
@@ -50,7 +50,6 @@ berryPage.addEventListener('click', (e) => {
     berryAtcl.appendChild(div);
     importBerries();
 });
-
 
 pokePage.addEventListener('click', (e) => {
     e.preventDefault();
@@ -87,16 +86,14 @@ pokePage.addEventListener('click', (e) => {
     importPokemon();
 });
 
-
 itemPage.addEventListener('click', (e) => {
-    e.preventDefault();
-    console.log('clicked');
-    document.getElementById('pokemon-article').classList.add('d-none');
-    document.getElementById('item-article').classList.remove('d-none');
-    document.getElementById('berry-article').classList.add('d-none');
-    pokePage.classList.remove('current');
-    itemPage.classList.add('current');
-    berryPage.classList.remove('current');
+  e.preventDefault();
+  document.getElementById('pokemon-article').classList.add('d-none');
+  document.getElementById('item-article').classList.remove('d-none');
+  document.getElementById('berry-article').classList.add('d-none');
+  pokePage.classList.remove('current');
+  itemPage.classList.add('current');
+  berryPage.classList.remove('current');
 
     const mainTag = document.querySelector('main');
     const formArr = document.getElementsByTagName('form');
