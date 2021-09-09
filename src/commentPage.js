@@ -1,5 +1,4 @@
-import makeBerryPage from './berryPage';
-import { displayPokemon, displayItem } from './showObject';
+import { displayPokemon, displayItem, displayBerry } from './showObject';
 
 const gotToCommentPage = (num, category) => {
   if (category === 'item') {
@@ -13,7 +12,9 @@ const gotToCommentPage = (num, category) => {
     displayPokemon(num);
   }
   else if (category ==='berry') {
-    makeBerryPage();
+    const berryPage = document.getElementById('berryPage');
+    berryPage = '';
+    displayBerry(num);
   }
   const mainTag = document.querySelector('main');
   const commentsHeading = document.createElement('h3');

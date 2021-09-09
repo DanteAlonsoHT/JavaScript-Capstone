@@ -1,3 +1,5 @@
+import gotToCommentPage from './commentPage';
+
 const populateBerries = (list) => {
     const berriesPage = document.getElementById('berryPage');
     document.getElementById('berriesTitle').innerText = 'Showing 10 berries';
@@ -8,12 +10,15 @@ const populateBerries = (list) => {
         <p>Item ID: ${element.id}</p>
         <p>max harvest: ${element.maxHarvest}</p>
  
-        <a class="btn" href="#" id="like-berry-${index}"> like</a>
-        <a class="btn" href="#" id="comment-berry-${index}"> comment</a>
-        <a class="btn" href="#" id="reserve-berry-${index}"> reserve</a>
-        `
-        
+        <a class="btn" href="#" id="like-berry-${index + 1}"> like</a>
+        <a class="btn" href="#" id="comment-berry-${index + 1}"> comment</a>
+        <a class="btn" href="#" id="reserve-berry-${index + 1}"> reserve</a>`;
         berriesPage.appendChild(div);
+        const commentLink = document.getElementById(`comment-berry-${index + 1}`);
+        commentLink.addEventListener('click', (e) => {
+          e.preventDefault();
+          gotToCommentPage(index + 1, 'berry');
+        });
     });
 }
 

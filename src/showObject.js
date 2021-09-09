@@ -36,4 +36,21 @@ const displayItem = async (id) => {
   itemPage.appendChild(div);
 };
 
-export { displayPokemon, displayItem };
+const displayBerry = async (id) => {
+  let response = await fetch(`https://pokeapi.co/api/v2/berry/${id}`);
+  let berry = await response.json();
+  const berryPage = document.getElementById('berryPage');
+  let div = document.createElement('section');
+  div.classList.add('displayedObj');
+  div.innerHTML = `
+  <h4>${berry.name}</h4>
+  <p>Item ID: ${berry.id}</p>
+  <p>max harvest: ${berry.maxHarvest}</p>`;
+  const berryTitle = document.createElement('h4');
+  berryTitle.id = 'itemTitle';
+  berryPage.appendChild(itemTitle);
+  berryTitle.innerText = `Showing ${berry.name}`;
+  berryPage.appendChild(div);
+};
+
+export { displayPokemon, displayItem, displayBerry };

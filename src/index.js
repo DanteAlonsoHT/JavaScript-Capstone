@@ -23,8 +23,10 @@ berryPage.addEventListener('click', (e) => {
       mainTag.removeChild(formArr[i]);
     }
     const headingArr = document.getElementsByClassName('form-heading');
-    for (let k = 0; k < 2; k += 1) {
+    if (headingArr.length > 0) {
+      for (let k = 0; k < 2; k += 1) {
         mainTag.removeChild(headingArr[0]);
+      }
     }
     const berryAtcl = document.getElementById('berryPage');
     const showElements = berryAtcl.getElementsByClassName('displayedObj');
@@ -48,8 +50,10 @@ pokePage.addEventListener('click', (e) => {
       mainTag.removeChild(formArr[i]);
     }
     const headingArr = document.getElementsByClassName('form-heading');
-    for (let k = 0; k < 2; k += 1) {
-      mainTag.removeChild(headingArr[0]);
+    if (headingArr.length > 0) {
+      for (let k = 0; k < 2; k += 1) {
+        mainTag.removeChild(headingArr[0]);
+      }
     }
     const pokeAtcl = document.getElementById('pokePage');
     const showElements = pokeAtcl.getElementsByClassName('displayedObj');
@@ -73,8 +77,10 @@ itemPage.addEventListener('click', (e) => {
       mainTag.removeChild(formArr[i]);
     }
     const headingArr = document.getElementsByClassName('form-heading');
-    for (let k = 0; k < 2; k += 1) {
+    if (headingArr.length > 0) {
+      for (let k = 0; k < 2; k += 1) {
         mainTag.removeChild(headingArr[0]);
+      }
     }
     const itemAtcl = document.getElementById('itemPage');
     const showElements = itemAtcl.getElementsByClassName('displayedObj');
@@ -87,7 +93,3 @@ itemPage.addEventListener('click', (e) => {
     document.getElementById('itemPage').classList.remove('d-none');
     document.getElementById('berryPage').classList.add('d-none');
 });
-
-// importPokemon();
-// importItems();
-importBerries();
