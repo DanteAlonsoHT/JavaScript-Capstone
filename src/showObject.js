@@ -1,9 +1,8 @@
-
 const displayPokemon = async (id) => {
-  let response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
-  let pokemon = await response.json();
+  const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+  const pokemon = await response.json();
   const pokePage = document.getElementById('pokePage');
-  let div = document.createElement('section');
+  const div = document.createElement('section');
   div.classList.add('displayedObj');
   div.innerHTML = `
   <img class="card_img" alt="pokemon-${pokemon.id}" src="${pokemon.sprite}">
@@ -19,10 +18,10 @@ const displayPokemon = async (id) => {
 };
 
 const displayItem = async (id) => {
-  let response = await fetch(`https://pokeapi.co/api/v2/item/${id}`);
-  let item = await response.json();
+  const response = await fetch(`https://pokeapi.co/api/v2/item/${id}`);
+  const item = await response.json();
   const itemPage = document.getElementById('itemPage');
-  let div = document.createElement('section');
+  const div = document.createElement('section');
   div.classList.add('displayedObj');
   div.innerHTML = `
   <img class="card_img" alt="item-${item.id}" src="${item.sprite}">
