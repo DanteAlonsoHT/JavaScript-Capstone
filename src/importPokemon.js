@@ -5,7 +5,7 @@ const importPokemon = async () =>{
 const list = []
 
 
-for (let i = 0; i<10 ; i++) {
+for (let i = 0; i<22 ; i++) {
     let response = await fetch(`https://pokeapi.co/api/v2/pokemon/${i+1}`);
     let obj = await response.json();
     let  pokemon = new Object();
@@ -19,13 +19,6 @@ for (let i = 0; i<10 ; i++) {
 
 console.log(list);
 populatePokemon(list);
-
-
-
-//   const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=20')
-//   const list = await response.json();
-//     console.log(list);
-
 }
 
 export default importPokemon;

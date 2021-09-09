@@ -5,13 +5,13 @@ const makeItemPage = () => {
 const itemPage =  document.createElement('article');
 
 itemPage.innerHTML = `
-<h2 id="itemsTitle"> Showing 10 items</h2>
-<section>
+<h2 id="itemsTitle"> Showing x item</h2>
+<section id="itemPage" class="d-flex flex-wrap">
 
-</section>
-`;
-itemPage.id = 'itemPage';
+</section>`;
+itemPage.id = 'item-article'
 itemPage.classList.add('d-none');
+
 document.querySelector('main').appendChild(itemPage);
 importItems();
 };
