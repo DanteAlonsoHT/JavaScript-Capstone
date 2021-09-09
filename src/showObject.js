@@ -30,7 +30,7 @@ const displayItem = async (id) => {
   <p>Item ID: ${item.id}</p>
   <p>Category: ${item.category}</p>`;
   const itemTitle = document.createElement('h4');
-  itemTitle.id = 'itemTitle';
+  itemTitle.id = 'itemsTitle';
   itemPage.appendChild(itemTitle);
   itemTitle.innerText = `Showing ${item.name}`;
   itemPage.appendChild(div);
@@ -47,8 +47,8 @@ const displayBerry = async (id) => {
   <p>Item ID: ${berry.id}</p>
   <p>max harvest: ${berry.maxHarvest}</p>`;
   const berryTitle = document.createElement('h4');
-  berryTitle.id = 'itemTitle';
-  berryPage.appendChild(itemTitle);
+  berryTitle.id = 'berriesTitle';
+  berryPage.appendChild(berryTitle);
   berryTitle.innerText = `Showing ${berry.name}`;
   berryPage.appendChild(div);
 };

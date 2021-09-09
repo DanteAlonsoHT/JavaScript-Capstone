@@ -13,7 +13,7 @@ const gotToCommentPage = (num, category) => {
   }
   else if (category ==='berry') {
     const berryPage = document.getElementById('berry-article');
-    berryPage = '';
+    berryPage.innerHTML = '';
     displayBerry(num);
   }
   const mainTag = document.querySelector('main');
