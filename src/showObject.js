@@ -28,7 +28,7 @@ const displayItem = async (id) => {
   <img class="card_img" alt="item-${item.id}" src="${item.sprites.front_default}">
   <h4>${item.name}</h4>
   <p>Item ID: ${item.id}</p>
-  <p>Category: ${item.category}</p>`;
+  <p>Category: ${item.category.name}</p>`;
   const itemTitle = document.createElement('h4');
   itemTitle.id = 'itemsTitle';
   itemPage.appendChild(itemTitle);
