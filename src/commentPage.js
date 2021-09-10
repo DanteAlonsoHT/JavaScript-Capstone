@@ -1,4 +1,4 @@
-import { postComment } from './involvementAPI';
+import { getItemComments, postComment } from './involvementAPI';
 import { displayPokemon, displayItem, displayBerry } from './showObject';
 
 const gotToCommentPage = (num, category, iName) => {
@@ -20,7 +20,8 @@ const gotToCommentPage = (num, category, iName) => {
   if (!document.querySelector('form')) {
     const mainTag = document.querySelector('main');
     const commentsHeading = document.createElement('h3');
-    commentsHeading.innerText = 'Comments (0)';
+    const commentsAmt = getItemComments(iName);
+    commentsHeading.innerText = `Comments (${commentsAmt})`;
     commentsHeading.classList.add('form-heading');
     mainTag.appendChild(commentsHeading);
     const formHeading = document.createElement('h4');
