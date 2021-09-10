@@ -1,4 +1,6 @@
 import gotToCommentPage from './commentPage';
+import getLikes from './getLikes';
+import sendLike from './sendLike';
 
 const populatePokemon = (list) => {
   const pokePage = document.getElementById('pokePage');
@@ -22,11 +24,22 @@ const populatePokemon = (list) => {
         
         div.classList.add('block');
         pokePage.appendChild(div);
+        getLikes(element.name,`like-pokemon-${index + 1}`);
         
         const commentLink = document.getElementById(`comment-pokemon-${index + 1}`);
         commentLink.addEventListener('click', (e) => {
           e.preventDefault(); 
           gotToCommentPage(index + 1, 'pokemon', element.name);
+        });
+
+        const likeLink = document.getElementById(`like-pokemon-${index + 1}`)
+        likeLink.addEventListener('mouseup', (e) => {
+          e.preventDefault();
+          if (!likeLink.classList.contains('liked')){
+            likeLink.classList.add('liked');
+            sendLike(element.name);
+            getLikes(element.name,`like-pokemon-${index + 1}`);
+          };
         });
     });
 };
