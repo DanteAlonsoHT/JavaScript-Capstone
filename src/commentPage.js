@@ -6,20 +6,18 @@ const gotToCommentPage = (num, category, iName) => {
     const itemPage = document.getElementById('item-article');
     itemPage.innerHTML = '';
     displayItem(num);
-  }
-  else if (category === 'pokemon') {
+  } else if (category === 'pokemon') {
     const pokePage = document.getElementById('pokemon-article');
     pokePage.innerHTML = '';
     displayPokemon(num);
-  }
-  else if (category ==='berry') {
+  } else if (category === 'berry') {
     const berryPage = document.getElementById('berry-article');
     berryPage.innerHTML = '';
     displayBerry(num);
   }
   if (!document.querySelector('form')) {
-    getItemComments(iName); 
+    getItemComments(iName);
   }
-}
+};
 
 export default gotToCommentPage;

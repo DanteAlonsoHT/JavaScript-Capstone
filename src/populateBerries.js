@@ -20,26 +20,25 @@ const populateBerries = (list) => {
           <a class="btn custom-link" href="#" id="reserve-berry-${index + 1}"> reserve</a>
         </div>`;
 
-        div.classList.add('block');
-        berriesPage.appendChild(div);
-        getLikes(element.name,`like-berry-${index + 1}`);
-        const commentLink = document.getElementById(`comment-berry-${index + 1}`);
-        commentLink.addEventListener('click', (e) => {
-          e.preventDefault();
-          gotToCommentPage(index + 1, 'berry', element.name);
-        });
-
-        const likeLink = document.getElementById(`like-berry-${index + 1}`)
-        likeLink.addEventListener('mouseup', (e) => {
-          e.preventDefault();
-          if (!likeLink.classList.contains('liked')){
-            likeLink.classList.add('liked');
-            sendLike(element.name);
-            getLikes(element.name,`like-berry-${index + 1}`);
-          };
-        });
-
+    div.classList.add('block');
+    berriesPage.appendChild(div);
+    getLikes(element.name, `like-berry-${index + 1}`);
+    const commentLink = document.getElementById(`comment-berry-${index + 1}`);
+    commentLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      gotToCommentPage(index + 1, 'berry', element.name);
     });
-}
+
+    const likeLink = document.getElementById(`like-berry-${index + 1}`);
+    likeLink.addEventListener('mouseup', (e) => {
+      e.preventDefault();
+      if (!likeLink.classList.contains('liked')) {
+        likeLink.classList.add('liked');
+        sendLike(element.name);
+        getLikes(element.name, `like-berry-${index + 1}`);
+      }
+    });
+  });
+};
 
 export default populateBerries;

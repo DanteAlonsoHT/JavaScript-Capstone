@@ -1,4 +1,3 @@
-
 const commentURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/WeWaTSWdgI5EoHhdFxch/comments';
 
 const postComment = async (objName, userName, content) => {
@@ -7,17 +6,14 @@ const postComment = async (objName, userName, content) => {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ item_id: objName, username: userName, comment: content }),
-    headers: {
-        'Content-type': 'application/json',
-        
-      },
-    })
-      .then((response) => response)
-      .then((json) => console.log(json));
+  })
+    .then((response) => response)
+    .then((json) => console.log(json));
 };
 
 const getItemComments = async (objName) => {
-  const response = await fetch(commentURL + `?item_id=${objName}`,{
+  /* eslint-disable-next-line */
+  const response = await fetch(`${commentURL}?item_id=${objName}`, {
     mode: 'cors',
     method: 'GET',
   })
@@ -27,7 +23,7 @@ const getItemComments = async (objName) => {
       if (!document.querySelector('form')) {
         const commentUl = document.createElement('ul');
         commentUl.classList.add('comment-list');
-        for(let i = 0; i < data.length; i += 1) {
+        for (let i = 0; i < data.length; i += 1) {
           const commentLi = document.createElement('li');
           commentLi.innerHTML = `<strong>${data[i].creation_date} ${data[i].username}:</strong> ${data[i].comment}`;
           commentUl.appendChild(commentLi);
@@ -35,7 +31,7 @@ const getItemComments = async (objName) => {
         mainEl.appendChild(commentUl);
         const commentsHeading = document.createElement('h3');
         if (!data.length) {
-          commentsHeading.innerText = `Comments (0)`;
+          commentsHeading.innerText = 'Comments (0)';
         } else {
           commentsHeading.innerText = `Comments (${data.length})`;
         }
@@ -43,7 +39,7 @@ const getItemComments = async (objName) => {
         mainEl.appendChild(commentsHeading);
         mainEl.classList.add('display');
         const formHeading = document.createElement('h4');
-        formHeading.innerText= 'Add a comment';
+        formHeading.innerText = 'Add a comment';
         formHeading.classList.add('form-heading');
         mainEl.appendChild(formHeading);
         const commentForm = document.createElement('form');
@@ -60,11 +56,11 @@ const getItemComments = async (objName) => {
           const insights = document.getElementById('comment-insights').value;
           postComment(objName, name, insights);
           const newCommentLi = document.createElement('li');
-          let today = new Date ();
-          let dd = String(today.getDate()).padStart(2, '0');
-          let mm = String(today.getMonth() + 1).padStart(2, '0');
-          let yyyy = today.getFullYear();
-          let date = yyyy + '-' + mm + '-' + dd;
+          const today = new Date();
+          const dd = String(today.getDate()).padStart(2, '0');
+          const mm = String(today.getMonth() + 1).padStart(2, '0');
+          const yyyy = today.getFullYear();
+          const date = `${yyyy}-${mm}-${dd}`;
           newCommentLi.innerHTML = `<strong>${date} ${name}:</strong> ${insights}`;
           commentUl.appendChild(newCommentLi);
           commentsHeading.innerText = `Comments (${data.length + 1})`;
