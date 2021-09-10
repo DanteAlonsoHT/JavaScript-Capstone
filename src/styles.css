@@ -4,6 +4,7 @@
 
 body {
   background-color: rgb(153, 241, 241);
+  font-family: sans-serif;
 }
 
 h2 {
@@ -114,7 +115,7 @@ footer {
   align-items: center;
 }
 
-.reservationSection form label{
+.reservationSection form label {
   width: 80px;
 }
 

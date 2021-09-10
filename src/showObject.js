@@ -36,10 +36,10 @@ const displayItem = async (id) => {
 };
 
 const displayBerry = async (id) => {
-  let response = await fetch(`https://pokeapi.co/api/v2/berry/${id}`);
-  let berry = await response.json();
+  const response = await fetch(`https://pokeapi.co/api/v2/berry/${id}`);
+  const berry = await response.json();
   const berryPage = document.getElementById('berry-article');
-  let div = document.createElement('section');
+  const div = document.createElement('section');
   div.classList.add('displayedObj');
   div.innerHTML = `
   <h4>${berry.name}</h4>
@@ -47,7 +47,7 @@ const displayBerry = async (id) => {
   <p>max harvest: ${berry.maxHarvest}</p>`;
   const berryTitle = document.createElement('h4');
   berryTitle.id = 'itemTitle';
-  berryPage.appendChild(itemTitle);
+  berryPage.appendChild(berryTitle);
   berryTitle.innerText = `Showing ${berry.name}`;
   berryPage.appendChild(div);
 };

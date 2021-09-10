@@ -5,15 +5,13 @@ const gotToCommentPage = (num, category) => {
     const itemPage = document.getElementById('item-article');
     itemPage.innerHTML = '';
     displayItem(num);
-  }
-  else if (category === 'pokemon') {
+  } else if (category === 'pokemon') {
     const pokePage = document.getElementById('pokemon-article');
     pokePage.innerHTML = '';
     displayPokemon(num);
-  }
-  else if (category ==='berry') {
+  } else if (category === 'berry') {
     const berryPage = document.getElementById('berry-article');
-    berryPage = '';
+    berryPage.innerHTML = '';
     displayBerry(num);
   }
   const mainTag = document.querySelector('main');
