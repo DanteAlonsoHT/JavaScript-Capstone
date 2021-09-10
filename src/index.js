@@ -11,9 +11,6 @@ import css from './styles.css';
 
 import importLikes from './importLikes';
 
-import { getAppID } from './involvementAPI';
-
-
 const pokePage = document.getElementById('poke');
 const itemPage = document.getElementById('item');
 const berryPage = document.getElementById('berry');
