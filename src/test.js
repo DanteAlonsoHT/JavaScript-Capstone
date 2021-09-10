@@ -1,5 +1,6 @@
 import loadReservations from './__mockReservation__';
 import loadComments from './__mockComment__';
+import getAmountOfItems from './getAmountOfItems';
 
 describe('For Creating Reservations', () => {
   const initialReservations = [];
@@ -114,3 +115,43 @@ describe('For Creating Comments', () => {
     });
   });
 });
+
+
+describe('For Counting items', () => {
+
+  const allPokemon = [
+    { name: 'bulbasaur', weight: '130'},
+    { name: 'snivy', weight: '130'},
+    { name: 'wartortle', weight: '130'},
+    { name: 'litleo', weight: '130'},
+    { name: 'fearow', weight: '130'}
+  ];
+
+  const allBerries = [
+    { name: 'nanab', id: '1'},
+    { name: 'pinia', id: '2'},
+    { name: 'latano', id: '3'},
+    { name: 'pecha', id: '4'}
+  ];
+
+  const allItems = [
+    { name: 'poke-ball', id: '1'},
+    { name: 'master-ball', id: '2'},
+    { name: 'safari-ball', id: '3'},
+    { name: 'great-ball', id: '4'},
+    { name: 'potion', id: '5'},
+    { name: 'super-potion', id: '6'},
+    { name: 'hyper-potion', id: '7'}
+  ];
+
+  test('Return the number of pokemon in the list', () => {
+    expect(getAmountOfItems(allPokemon)).toBe(5);
+  });
+  test('Return the number of items in the list', () => {
+    expect(getAmountOfItems(allItems)).toBe(7);
+  });
+  test('Return the number of berries in the list', () => {
+    expect(getAmountOfItems(allBerries)).toBe(4);
+  });
+});
+
