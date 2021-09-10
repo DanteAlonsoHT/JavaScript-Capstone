@@ -57,17 +57,15 @@ describe('For Creating Reservations', () => {
 });
 
 describe('For Creating Comments', () => {
-
   const initialComments = [];
 
   const allCommentsByPokemons = [
-    {"username":"Ash Ketchum","creation_date":"2021-09-10","comment":"Great against fire types!"}
-    ,{"username":"Professor Oak","creation_date":"2021-09-10","comment":"Well evolved!"}
-    ,{"username":"Gary Oak","creation_date":"2021-09-10","comment":"Doesn't stand a chance against my Venusaur!"}
-    ,{"username":"Bianca","creation_date":"2021-09-10","comment":"Cute but brutal!"}
-    ,{"username":"Brock","creation_date":"2021-09-10","comment":"Awesome!"}
+    { username: 'Ash Ketchum', creation_date: '2021-09-10', comment: 'Great against fire types!' },
+    { username: 'Professor Oak', creation_date: '2021-09-10', comment: 'Well evolved!' },
+    { username: 'Gary Oak', creation_date: '2021-09-10', comment: "Doesn't stand a chance against my Venusaur!" },
+    { username: 'Bianca', creation_date: '2021-09-10', comment: 'Cute but brutal!' },
+    { username: 'Brock', creation_date: '2021-09-10', comment: 'Awesome!' },
   ];
-
 
   describe('createComment method from involvement Comments', () => {
     test('Empty list is initialized in initialComments variable', () => {
@@ -84,8 +82,8 @@ describe('For Creating Comments', () => {
     });
 
     test('Add a new comment', () => {
-      const newComment = [{"username":"Brock","creation_date":"2021-09-10","comment":"I wonder where I can find one."}];
-      initialComments.push(newComment)
+      const newComment = [{ username: 'Brock', creation_date: '2021-09-10', comment: 'I wonder where I can find one.' }];
+      initialComments.push(newComment);
       const commentAmount = loadComments(initialComments);
       expect(commentAmount).toEqual(1);
     });
@@ -96,9 +94,13 @@ describe('For Creating Comments', () => {
     });
 
     test('Create two comments more', () => {
-      const newComment2 = {"username":"Brock","creation_date":"2021-09-09","comment":"This one seems very rare."};
-      const newComment3 = {"username":"Ash Ketchum","creation_date":"2021-09-11","comment":
-      "I saw one of these but couldn't catch it"};
+      const newComment2 = { username: 'Brock', creation_date: '2021-09-09', comment: 'This one seems very rare.' };
+      const newComment3 = {
+        username: 'Ash Ketchum',
+        creation_date: '2021-09-11',
+        comment:
+      "I saw one of these but couldn't catch it",
+      };
       initialComments.push(newComment2);
       initialComments.push(newComment3);
       const commentAmount = loadComments(initialComments);
@@ -108,7 +110,7 @@ describe('For Creating Comments', () => {
     test('Return an error when the parameter is undefined', () => {
       const commentNotValid = undefined;
       const commentAmount = loadComments(commentNotValid);
-      expect(commentAmount).toEqual("Error 404: API not found");
+      expect(commentAmount).toEqual('Error 404: API not found');
     });
   });
 });
