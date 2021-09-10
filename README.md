@@ -60,9 +60,9 @@
 
 👤 **Yuvraj Manoo**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@githubhandle](https://github.com/YuvrajM108)
+- Twitter: [@twitterhandle](https://twitter.com/YuvrajM108)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/yuvraj-manoo)
 
 👤 **Julian Carracedo**
 
