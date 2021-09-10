@@ -41,6 +41,7 @@ const getItemComments = async (objName) => {
         }
         commentsHeading.classList.add('form-heading');
         mainEl.appendChild(commentsHeading);
+        mainEl.classList.add('display');
         const formHeading = document.createElement('h4');
         formHeading.innerText= 'Add a comment';
         formHeading.classList.add('form-heading');

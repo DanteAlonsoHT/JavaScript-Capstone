@@ -26,7 +26,8 @@ berryPage.addEventListener('click', (e) => {
     itemPage.classList.remove('current');
     berryPage.classList.add('current');
   
-   const mainTag = document.querySelector('main');
+    const mainTag = document.querySelector('main');
+    mainTag.classList.remove('display');
     const formArr = document.getElementsByTagName('form');
     for (let i = 0; i < formArr.length; i += 1) {
       mainTag.removeChild(formArr[i]);
@@ -62,6 +63,7 @@ pokePage.addEventListener('click', (e) => {
     itemPage.classList.remove('current');
     berryPage.classList.remove('current');
     const mainTag = document.querySelector('main');
+    mainTag.classList.remove('display');
     const formArr = document.getElementsByTagName('form');
     for (let i = 0; i < formArr.length; i += 1) {
       mainTag.removeChild(formArr[i]);
@@ -96,6 +98,7 @@ itemPage.addEventListener('click', (e) => {
   berryPage.classList.remove('current');
 
     const mainTag = document.querySelector('main');
+    mainTag.classList.remove('display');
     const formArr = document.getElementsByTagName('form');
     for (let i = 0; i < formArr.length; i += 1) {
       mainTag.removeChild(formArr[i]);
