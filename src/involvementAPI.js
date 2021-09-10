@@ -24,16 +24,51 @@ const getItemComments = async (objName) => {
     .then((response) => response.json())
     .then((data) => {
       const mainEl = document.querySelector('main');
-      const commentUl = document.createElement('ul');
-      commentUl.classList.add('comment-list');
-      for(let i = 0; i < data.length; i += 1) {
-        const commentLi = document.createElement('li');
-        commentLi.innerHTML = `${data[i].creation_date} ${data[i].username}: ${data[i].comment}`;
-        commentUl.appendChild(commentLi);
+      if (!document.querySelector('form')) {
+        const commentUl = document.createElement('ul');
+        commentUl.classList.add('comment-list');
+        for(let i = 0; i < data.length; i += 1) {
+          const commentLi = document.createElement('li');
+          commentLi.innerHTML = `<strong>${data[i].creation_date} ${data[i].username}:</strong> ${data[i].comment}`;
+          commentUl.appendChild(commentLi);
+        }
+        mainEl.appendChild(commentUl);
+        const commentsHeading = document.createElement('h3');
+        if (!data.length) {
+          commentsHeading.innerText = `Comments (0)`;
+        } else {
+          commentsHeading.innerText = `Comments (${data.length})`;
+        }
+        commentsHeading.classList.add('form-heading');
+        mainEl.appendChild(commentsHeading);
+        const formHeading = document.createElement('h4');
+        formHeading.innerText= 'Add a comment';
+        formHeading.classList.add('form-heading');
+        mainEl.appendChild(formHeading);
+        const commentForm = document.createElement('form');
+        commentForm.innerHTML = `
+          <input id="commenter-name" name="name" type="text" placeholder="Your Name" required></input>
+          <br>
+          <textarea id="comment-insights" name="insights" placeholder="Your Insights" required></textarea>
+          <br>
+          <button id="commentBtn" type="submit">Comment</button>`;
+        mainEl.appendChild(commentForm);
+        commentForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const name = document.getElementById('commenter-name').value;
+          const insights = document.getElementById('comment-insights').value;
+          postComment(objName, name, insights);
+          const newCommentLi = document.createElement('li');
+          let today = new Date ();
+          let dd = String(today.getDate()).padStart(2, '0');
+          let mm = String(today.getMonth() + 1).padStart(2, '0');
+          let yyyy = today.getFullYear();
+          let date = yyyy + '-' + mm + '-' + dd;
+          newCommentLi.innerHTML = `<strong>${date} ${name}:</strong> ${insights}`;
+          commentUl.appendChild(newCommentLi);
+          commentsHeading.innerText = `Comments (${data.length + 1})`;
+        });
       }
-      mainEl.appendChild(commentUl);
-      const commentCount = Object.keys(data).length;
-      return commentCount;
     });
 };
 
