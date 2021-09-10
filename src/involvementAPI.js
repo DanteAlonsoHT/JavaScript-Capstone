@@ -63,7 +63,11 @@ const getItemComments = async (objName) => {
           const date = `${yyyy}-${mm}-${dd}`;
           newCommentLi.innerHTML = `<strong>${date} ${name}:</strong> ${insights}`;
           commentUl.appendChild(newCommentLi);
-          commentsHeading.innerText = `Comments (${data.length + 1})`;
+          if (!data.length) {
+            commentsHeading.innerText = `Comments (1)`;
+          } else {
+            commentsHeading.innerText = `Comments (${parseInt(data.length) + 1})`;
+          }
         });
       }
     });
