@@ -6,7 +6,11 @@ import importBerries from './importBerries';
 import importItems from './importItems';
 import importPokemon from './importPokemon';
 import css from './styles.css';
+
+import importLikes from './importLikes';
+
 import { getAppID } from './involvementAPI';
+
 
 const pokePage = document.getElementById('poke');
 const itemPage = document.getElementById('item');
