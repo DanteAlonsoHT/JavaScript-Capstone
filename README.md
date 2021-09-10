@@ -49,20 +49,21 @@
 
 ### Run tests
 
+- To run the test using JEST, run the next command in your terminal: ```npm test```
 
 ## Authors
 
 👤 **Dante Alonso**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@DanteAlonsoHT](https://github.com/DanteAlonsoHT)
+- Twitter: [@dante_dante1](https://twitter.com/dante_dante1)
+- LinkedIn: [Dante Alonso](https://www.linkedin.com/in/dante-alonso/)
 
 👤 **Yuvraj Manoo**
 
-- GitHub: [@githubhandle](https://github.com/YuvrajM108)
-- Twitter: [@twitterhandle](https://twitter.com/YuvrajM108)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/yuvraj-manoo)
+- GitHub: [@YuvrajjM108](https://github.com/YuvrajM108)
+- Twitter: [@YuvrajM108](https://twitter.com/YuvrajM108)
+- LinkedIn: [Yuvraj-Manoo](https://linkedin.com/in/yuvraj-manoo)
 
 👤 **Julian Carracedo**
 
