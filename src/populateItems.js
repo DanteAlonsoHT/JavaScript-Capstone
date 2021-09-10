@@ -18,14 +18,14 @@ const populateItems = (list) => {
           <a class="btn custom-link" href="#" id="comment-item-${index + 1}"> comment</a>
           <a class="btn custom-link" href="#" id="reserve-item-${index + 1}"> reserve</a>
         </div>`;
-    div.classList.add('block');
-    itemsPage.appendChild(div);
-    const commentLink = document.getElementById(`comment-item-${index + 1}`);
-    commentLink.addEventListener('click', (e) => {
-      e.preventDefault();
-      gotToCommentPage(index + 1, 'item');
+        div.classList.add('block');
+        itemsPage.appendChild(div);
+        const commentLink = document.getElementById(`comment-item-${index + 1}`);
+        commentLink.addEventListener('click', (e) => {
+            e.preventDefault(); 
+            gotToCommentPage(index + 1, 'item', element.name);
+        });
     });
-  });
 };
 
 export default populateItems;

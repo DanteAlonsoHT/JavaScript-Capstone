@@ -19,16 +19,16 @@ const populatePokemon = (list) => {
           <a class="btn custom-link fix" href="#" id="comment-pokemon-${index + 1}"> comment</a>
           <a class="btn custom-link fix" href="#" id="reserve-pokemon-${index + 1}"> reserve</a>
         </div>`;
-
-    div.classList.add('block');
-    pokePage.appendChild(div);
-
-    const commentLink = document.getElementById(`comment-pokemon-${index + 1}`);
-    commentLink.addEventListener('click', (e) => {
-      e.preventDefault();
-      gotToCommentPage(index + 1, 'pokemon');
+        
+        div.classList.add('block');
+        pokePage.appendChild(div);
+        
+        const commentLink = document.getElementById(`comment-pokemon-${index + 1}`);
+        commentLink.addEventListener('click', (e) => {
+          e.preventDefault(); 
+          gotToCommentPage(index + 1, 'pokemon', element.name);
+        });
     });
-  });
 };
 
 export default populatePokemon;

@@ -87,3 +87,7 @@ footer {
 #nav-logo:hover {
   transform: rotate(180deg);
 }
+
+ul.comment-list {
+  list-style-type: none;
+}

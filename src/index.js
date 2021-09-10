@@ -6,7 +6,11 @@ import importBerries from './importBerries';
 import importItems from './importItems';
 import importPokemon from './importPokemon';
 import css from './styles.css';
+
 import importLikes from './importLikes';
+
+import { getAppID } from './involvementAPI';
+
 
 const pokePage = document.getElementById('poke');
 const itemPage = document.getElementById('item');
@@ -33,7 +37,8 @@ berryPage.addEventListener('click', (e) => {
     }
     const headingArr = document.getElementsByClassName('form-heading');
     if (headingArr.length > 0) {
-      for (let k = 0; k < 2; k += 1) {
+      const formElCount = headingArr.length;
+      for (let k = 0; k < formElCount; k += 1) {
         mainTag.removeChild(headingArr[0]);
       }
     }
@@ -67,7 +72,8 @@ pokePage.addEventListener('click', (e) => {
     }
     const headingArr = document.getElementsByClassName('form-heading');
     if (headingArr.length > 0) {
-      for (let k = 0; k < 2; k += 1) {
+      const formElCount = headingArr.length;
+      for (let k = 0; k < formElCount; k += 1) {
         mainTag.removeChild(headingArr[0]);
       }
     }
@@ -100,7 +106,8 @@ itemPage.addEventListener('click', (e) => {
     }
     const headingArr = document.getElementsByClassName('form-heading');
     if (headingArr.length > 0) {
-      for (let k = 0; k < 2; k += 1) {
+      const formElCount = headingArr.length;
+      for (let k = 0; k < formElCount; k += 1) {
         mainTag.removeChild(headingArr[0]);
       }
     }
