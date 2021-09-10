@@ -21,7 +21,7 @@ const displayReservationById = async (typeObj, idObj) => {
     list.push(pokemon);
     description = `
         <img class="card_img" alt="pokemon-${pokemon.id}" src="${pokemon.sprite}">
-        <h4>${pokemon.name}</h4>
+        <h6>${pokemon.name}</h6>
         <p>Pokedex ID: ${pokemon.id}</p>
         <div class="d-flex">
             <p class="me-3">Weight: ${pokemon.weight}</p>
@@ -37,7 +37,7 @@ const displayReservationById = async (typeObj, idObj) => {
     list.push(item);
     description = `
         <img class="card_img" alt="item-${item.id}" src="${item.sprite}">
-        <h4>${item.name}</h4>
+        <h6>${item.name}</h6>
         <div class="d-flex">
             <p class="me-3">Item ID: ${item.id}</p>
             <p class="ms-3">category: ${item.category}</p>
@@ -50,7 +50,7 @@ const displayReservationById = async (typeObj, idObj) => {
     berry.maxHarvest = obj.max_harvest;
     list.push(berry);
     description = `
-        <h4>${berry.name}</h4>
+        <h6>${berry.name}</h6>
         <div class="d-flex">
             <p class="me-3">Item ID: ${berry.id}</p>
             <p class="ms-3">max harvest: ${berry.maxHarvest}</p>
@@ -68,7 +68,7 @@ const displayReservationById = async (typeObj, idObj) => {
          <a class="btn" href="#" id="reserve-${typeObj}-${idObj}"> reserve</a>
          </div>
 
-         <h3 id="totalReservation-${typeObj}-${idObj}">Reservations ()</h3>
+         <h5 id="totalReservation-${typeObj}-${idObj}">Reservations ()</h5>
          <ul id="list-${typeObj}-${idObj}">
          </ul>
 

@@ -92,7 +92,7 @@ footer {
 .reservationSection {
   position: fixed;
   display: flex;
-  padding: 5rem;
+  padding: 4rem 1rem;
   border-radius: 3rem;
   min-width: 300px;
   max-width: 550px;
@@ -105,6 +105,22 @@ footer {
   align-items: center;
   background-color: aliceblue;
   z-index: 2;
+}
+
+.reservationSection p,
+.reservationSection li {
+  font-size: 10px;
+}
+
+.reservationSection img {
+  height: 86px;
+  width: 86px;
+  margin: 0;
+}
+
+.reservationSection label,
+.reservationSection input .reservationSection button {
+  font-size: 12px;
 }
 
 .reservationSection form {
