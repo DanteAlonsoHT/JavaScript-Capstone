@@ -9,6 +9,11 @@ import displayReservationById from './reservationPage';
 import { loadReservations } from './involvementReservationAPI';
 import css from './styles.css';
 
+import importLikes from './importLikes';
+
+import { getAppID } from './involvementAPI';
+
+
 const pokePage = document.getElementById('poke');
 const itemPage = document.getElementById('item');
 const berryPage = document.getElementById('berry');
@@ -27,14 +32,16 @@ berryPage.addEventListener('click', (e) => {
     itemPage.classList.remove('current');
     berryPage.classList.add('current');
   
-   const mainTag = document.querySelector('main');
+    const mainTag = document.querySelector('main');
+    mainTag.classList.remove('display');
     const formArr = document.getElementsByTagName('form');
     for (let i = 0; i < formArr.length; i += 1) {
       mainTag.removeChild(formArr[i]);
     }
     const headingArr = document.getElementsByClassName('form-heading');
     if (headingArr.length > 0) {
-      for (let k = 0; k < 2; k += 1) {
+      const formElCount = headingArr.length;
+      for (let k = 0; k < formElCount; k += 1) {
         mainTag.removeChild(headingArr[0]);
       }
     }
@@ -62,13 +69,15 @@ pokePage.addEventListener('click', (e) => {
     itemPage.classList.remove('current');
     berryPage.classList.remove('current');
     const mainTag = document.querySelector('main');
+    mainTag.classList.remove('display');
     const formArr = document.getElementsByTagName('form');
     for (let i = 0; i < formArr.length; i += 1) {
       mainTag.removeChild(formArr[i]);
     }
     const headingArr = document.getElementsByClassName('form-heading');
     if (headingArr.length > 0) {
-      for (let k = 0; k < 2; k += 1) {
+      const formElCount = headingArr.length;
+      for (let k = 0; k < formElCount; k += 1) {
         mainTag.removeChild(headingArr[0]);
       }
     }
@@ -95,13 +104,15 @@ itemPage.addEventListener('click', (e) => {
   berryPage.classList.remove('current');
 
     const mainTag = document.querySelector('main');
+    mainTag.classList.remove('display');
     const formArr = document.getElementsByTagName('form');
     for (let i = 0; i < formArr.length; i += 1) {
       mainTag.removeChild(formArr[i]);
     }
     const headingArr = document.getElementsByClassName('form-heading');
     if (headingArr.length > 0) {
-      for (let k = 0; k < 2; k += 1) {
+      const formElCount = headingArr.length;
+      for (let k = 0; k < formElCount; k += 1) {
         mainTag.removeChild(headingArr[0]);
       }
     }
