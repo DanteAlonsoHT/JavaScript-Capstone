@@ -123,3 +123,14 @@ footer {
   max-height: 100px;
   overflow-y: scroll;
 }
+
+ul.comment-list {
+  list-style-type: none;
+}
+
+main.display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,4 +1,6 @@
 import gotToCommentPage from './commentPage';
+import getLikes from './getLikes';
+import sendLike from './sendLike';
 
 const populateItems = (list) => {
   const itemsPage = document.getElementById('itemPage');
@@ -18,14 +20,25 @@ const populateItems = (list) => {
           <a class="btn custom-link" href="#" id="comment-item-${index + 1}"> comment</a>
           <a class="btn custom-link" href="#" id="reserve-item-${index + 1}"> reserve</a>
         </div>`;
-    div.classList.add('block');
-    itemsPage.appendChild(div);
-    const commentLink = document.getElementById(`comment-item-${index + 1}`);
-    commentLink.addEventListener('click', (e) => {
-      e.preventDefault();
-      gotToCommentPage(index + 1, 'item');
+        div.classList.add('block');       
+        itemsPage.appendChild(div);
+        getLikes(element.name,`like-item-${index + 1}`);
+        const commentLink = document.getElementById(`comment-item-${index + 1}`);
+        commentLink.addEventListener('click', (e) => {
+          e.preventDefault(); 
+          gotToCommentPage(index + 1, 'item', element.name);
+        });
+
+        const likeLink = document.getElementById(`like-item-${index + 1}`)
+        likeLink.addEventListener('mouseup', (e) => {
+          e.preventDefault();
+          if (!likeLink.classList.contains('liked')){
+            likeLink.classList.add('liked');
+            sendLike(element.name);
+            getLikes(element.name,`like-item-${index + 1}`);
+          };
+        });
     });
-  });
 };
 
 export default populateItems;
