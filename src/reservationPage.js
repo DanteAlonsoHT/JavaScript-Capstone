@@ -5,6 +5,8 @@ const displayReservationById = async (typeObj, idObj) => {
   const itemContent = document.getElementById('itemPage');
   const berryContent = document.getElementById('berryPage');
 
+  const buttonLike = document.getElementById(`like-${typeObj}-${idObj}`);
+
   const list = [];
   let description = '';
 
@@ -58,21 +60,21 @@ const displayReservationById = async (typeObj, idObj) => {
         `;
   }
 
-  list.forEach(() => {
-    const div = document.createElement('section');
-    div.className = `currentSection-${typeObj}-${idObj} reservationSection`;
-    div.innerHTML = `${description}
-         <div>
-         <a class="btn" href="#" id="like-${typeObj}-${idObj}"> like</a>
-         <a class="btn" href="#" id="comment-${typeObj}-${idObj}"> comment</a>
-         <a class="btn" href="#" id="reserve-${typeObj}-${idObj}"> reserve</a>
-         </div>
+  const div = document.createElement('section');
+  div.className = `currentSection-${typeObj}-${idObj} reservationSection`;
+  div.innerHTML = `${description}
+        <div>
+        <a class="btn btn-outline-danger" href="#" id="like-${typeObj}-${idObj}">
+        ${buttonLike.textContent.indexOf('like') !== -1 ? buttonLike.textContent : 'like'}
+        </a>
+        <a class="btn btn-outline-danger" href="#" id="comment-${typeObj}-${idObj}"> comment</a>
+        </div>
 
-         <h5 id="totalReservation-${typeObj}-${idObj}">Reservations ()</h5>
-         <ul id="list-${typeObj}-${idObj}">
-         </ul>
+        <h5 id="totalReservation-${typeObj}-${idObj}">Reservations ()</h5>
+        <ul id="list-${typeObj}-${idObj}">
+        </ul>
 
-         <form id="formReservation-${typeObj}-${idObj}">
+        <form id="formReservation-${typeObj}-${idObj}">
             <label for="yourNameText-${typeObj}-${idObj}">Your Name</label>
             <input type="text" id="yourNameTextId-${typeObj}-${idObj}" name="yourNameText-${typeObj}-${idObj}" class="form-control" required>
             <label for="startDate-${typeObj}-${idObj}">Start Date</label>
@@ -80,38 +82,47 @@ const displayReservationById = async (typeObj, idObj) => {
             <label for="endDate-${typeObj}-${idObj}">End Date</label>
             <input type="date" id="endDateId-${typeObj}-${idObj}" name="endDate-${typeObj}-${idObj}" class="form-control" required>
             <button type="submit" id="submitReserve-${typeObj}-${idObj}" class="btn btn-outline-danger">Submit</button>
-         </form>
-         `;
-    if (typeObj === 'pokemon') {
-      pokemonContent.appendChild(div);
-    } else if (typeObj === 'item') {
-      itemContent.appendChild(div);
-    } else if (typeObj === 'berry') {
-      berryContent.appendChild(div);
-    }
+        </form>
+        `;
+  if (typeObj === 'pokemon') {
+    pokemonContent.appendChild(div);
+  } else if (typeObj === 'item') {
+    itemContent.appendChild(div);
+  } else if (typeObj === 'berry') {
+    berryContent.appendChild(div);
+  }
 
-    document.querySelector(`.currentSection-${typeObj}-${idObj}`).addEventListener('click', (ev) => {
-      if (ev.target !== null && ev.target !== 'NaN' && ev.target !== '') {
-        if (ev.target.id.includes('submitReserve')) {
-          const itemId = `${typeObj}-${idObj}`;
-          const authorName = document.getElementById(`yourNameTextId-${typeObj}-${idObj}`).value;
-          const startDate = document.getElementById(`startDateId-${typeObj}-${idObj}`).value;
-          const endDate = document.getElementById(`endDateId-${typeObj}-${idObj}`).value;
-          if (itemId && authorName && startDate && endDate) {
-            ev.preventDefault();
-            createReservation(typeObj, idObj);
-          }
+  document.querySelector(`.currentSection-${typeObj}-${idObj}`).addEventListener('click', (ev) => {
+    if (ev.target !== null && ev.target !== 'NaN' && ev.target !== '') {
+      if (ev.target.id.includes('submitReserve')) {
+        const itemId = `${typeObj}-${idObj}`;
+        const authorName = document.getElementById(`yourNameTextId-${typeObj}-${idObj}`).value;
+        const startDate = document.getElementById(`startDateId-${typeObj}-${idObj}`).value;
+        const endDate = document.getElementById(`endDateId-${typeObj}-${idObj}`).value;
+        if (itemId && authorName && startDate && endDate) {
+          ev.preventDefault();
+          createReservation(typeObj, idObj);
+          document.getElementById(`formReservation-${typeObj}-${idObj}`).reset();
         }
       }
-    });
-    document.querySelector('main').addEventListener('click', (ev) => {
-      const attrId = ev.target.getAttribute('id');
-      if (((attrId === 'pokePage') || (attrId === 'itemPage') || (attrId === 'berryPage'))
-            && (document.querySelector(`.currentSection-${typeObj}-${idObj}`))) {
+    }
+  });
+  document.querySelector('body').addEventListener('click', (ev) => {
+    const currentPopUp = document.querySelector(`.currentSection-${typeObj}-${idObj}`);
+    if (ev.target !== currentPopUp && currentPopUp) {
+      if (!currentPopUp.contains(ev.target)) {
         document.querySelector(`.currentSection-${typeObj}-${idObj}`).remove();
       }
-    });
+    }
   });
+  if (document.querySelectorAll(`.currentSection-${typeObj}-${idObj}`).length > 1) {
+    const allReservations = document.querySelectorAll(`.currentSection-${typeObj}-${idObj}`);
+    allReservations.forEach((reservationPopup, index) => {
+      if (index !== 0) {
+        reservationPopup.remove();
+      }
+    });
+  }
 };
 
 export default displayReservationById;
