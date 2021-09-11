@@ -15,9 +15,58 @@ const pokePage = document.getElementById('poke');
 const itemPage = document.getElementById('item');
 const berryPage = document.getElementById('berry');
 
+const AddPokeReservationsListner = () => {
+  const pokemonContent = document.getElementById('pokePage');
+
+  pokemonContent.addEventListener('click', (ev) => {
+    if (ev.target !== null && ev.target !== 'NaN' && ev.target !== '') {
+      if (ev.target.id.includes('reserve-pokemon')) {
+        const idPokemon = ev.target.id.replace('reserve-pokemon-', '');
+        displayReservationById('pokemon', idPokemon);
+        loadReservations(`pokemon-${idPokemon}`);
+      }
+    }
+  });
+};
+
+
+const AddItemReservationsListner = () => {
+  const itemContent = document.getElementById('itemPage');
+
+  itemContent.addEventListener('click', (ev) => {
+    if (ev.target !== null && ev.target !== 'NaN' && ev.target !== '') {
+      if (ev.target.id.includes('reserve-item')) {
+        const idItem = ev.target.id.replace('reserve-item-', '');
+        displayReservationById('item', idItem);
+        loadReservations(`item-${idItem}`);
+      }
+    }
+  });
+};
+
+
+const AddBerryReservationsListner = () => {
+  const berryContent = document.getElementById('berryPage');
+
+  berryContent.addEventListener('click', (ev) => {
+    if (ev.target !== null && ev.target !== 'NaN' && ev.target !== '') {
+      if (ev.target.id.includes('reserve-berry')) {
+        const idBerry = ev.target.id.replace('reserve-berry-', '');
+        displayReservationById('berry', idBerry);
+        loadReservations(`berry-${idBerry}`);
+      }
+    }
+  });
+};
+
+
 makePokemonPage();
 makeBerryPage();
 makeItemPage();
+
+AddPokeReservationsListner();
+AddItemReservationsListner();
+AddBerryReservationsListner();
 
 berryPage.addEventListener('click', (e) => {
   e.preventDefault();
@@ -55,6 +104,7 @@ berryPage.addEventListener('click', (e) => {
   div.classList.add('flex-wrap');
   berryAtcl.appendChild(div);
   importBerries();
+  AddBerryReservationsListner();
 });
 
 pokePage.addEventListener('click', (e) => {
@@ -91,6 +141,7 @@ pokePage.addEventListener('click', (e) => {
   div.classList.add('flex-wrap');
   pokeAtcl.appendChild(div);
   importPokemon();
+  AddPokeReservationsListner();
 });
 
 itemPage.addEventListener('click', (e) => {
@@ -128,38 +179,5 @@ itemPage.addEventListener('click', (e) => {
   div.classList.add('flex-wrap');
   itemAtcl.appendChild(div);
   importItems();
-});
-
-const pokemonContent = document.getElementById('pokePage');
-const itemContent = document.getElementById('itemPage');
-const berryContent = document.getElementById('berryPage');
-
-pokemonContent.addEventListener('click', (ev) => {
-  if (ev.target !== null && ev.target !== 'NaN' && ev.target !== '') {
-    if (ev.target.id.includes('reserve-pokemon')) {
-      const idPokemon = ev.target.id.replace('reserve-pokemon-', '');
-      displayReservationById('pokemon', idPokemon);
-      loadReservations(`pokemon-${idPokemon}`);
-    }
-  }
-});
-
-itemContent.addEventListener('click', (ev) => {
-  if (ev.target !== null && ev.target !== 'NaN' && ev.target !== '') {
-    if (ev.target.id.includes('reserve-item')) {
-      const idItem = ev.target.id.replace('reserve-item-', '');
-      displayReservationById('item', idItem);
-      loadReservations(`item-${idItem}`);
-    }
-  }
-});
-
-berryContent.addEventListener('click', (ev) => {
-  if (ev.target !== null && ev.target !== 'NaN' && ev.target !== '') {
-    if (ev.target.id.includes('reserve-berry')) {
-      const idBerry = ev.target.id.replace('reserve-berry-', '');
-      displayReservationById('berry', idBerry);
-      loadReservations(`berry-${idBerry}`);
-    }
-  }
+  AddItemReservationsListner();
 });
