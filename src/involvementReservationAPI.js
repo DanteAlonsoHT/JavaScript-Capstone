@@ -2,23 +2,29 @@ const idInvolvementAPI = 'WeWaTSWdgI5EoHhdFxch';
 
 const urlAPI = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${idInvolvementAPI}/reservations`;
 
+const reservationCounter = (result, itemId, reservationsHTML) =>  {
+   let totalReservations = 0;
+   let reservationTitleAfterCounter = '';
+   if (result[0] !== undefined) {
+      result.forEach((reservation, index) => {
+         reservationsHTML.innerHTML += `<li id="listElement-${itemId}-${index + 1}}">${reservation.date_start} - ${reservation.date_end} by ${reservation.username}</li>`;
+         totalReservations = index + 1;
+         reservationTitleAfterCounter = `Reservations (${totalReservations})`;
+      });
+   } else {
+      reservationTitleAfterCounter = `Reservations (0)`;
+   }
+   return reservationTitleAfterCounter;
+};
+
 const loadReservations = async (itemId) => {
   const response = await fetch(`${urlAPI}?item_id=${itemId}`);
   const result = await response.json();
   const reservationsHTML = document.getElementById(`list-${itemId}`);
   const reservationTitle = document.getElementById(`totalReservation-${itemId}`);
-  let totalReservations = 0;
   reservationsHTML.innerHTML = '';
-  if (result[0] !== undefined) {
-    result.forEach((reservation, index) => {
-      reservationsHTML.innerHTML += `<li id="listElement-${itemId}-${index + 1}}">${reservation.date_start} - ${reservation.date_end} by ${reservation.username}</li>`;
-      totalReservations = index + 1;
-      reservationTitle.textContent = `Reservations (${totalReservations})`;
-    });
-  } else {
-    reservationTitle.textContent = 'Reservations (0)';
-  }
-  return totalReservations;
+  reservationTitle.textContent = '';
+  reservationTitle.textContent = reservationCounter(result, itemId, reservationsHTML);
 };
 
 const createReservation = async (typeObj, idObj) => {
