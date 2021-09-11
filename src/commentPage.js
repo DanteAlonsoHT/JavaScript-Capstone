@@ -16,7 +16,7 @@ const gotToCommentPage = (num, category, iName) => {
     displayBerry(num);
   }
   if (!document.querySelector('form')) {
-    getItemComments(iName);
+    getItemComments(iName, category);
   }
 };
 

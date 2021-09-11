@@ -36,7 +36,7 @@ h2 {
   border-radius: 15px;
 }
 
-.block {
+.block, .displayedObj {
   display: flex;
   flex-direction: column;
   align-items: center;

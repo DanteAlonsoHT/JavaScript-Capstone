@@ -2,6 +2,9 @@ const displayPokemon = async (id) => {
   const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
   const pokemon = await response.json();
   const pokePage = document.getElementById('pokemon-article');
+  pokePage.classList.add('d-flex');
+  pokePage.classList.add('flex-column');
+  pokePage.classList.add('align-items-center');
   if (!document.getElementById('pokeTitle')) {
     const div = document.createElement('section');
     div.classList.add('displayedObj');
@@ -23,6 +26,9 @@ const displayItem = async (id) => {
   const response = await fetch(`https://pokeapi.co/api/v2/item/${id}`);
   const item = await response.json();
   const itemPage = document.getElementById('item-article');
+  itemPage.classList.add('d-flex');
+  itemPage.classList.add('flex-column');
+  itemPage.classList.add('align-items-center');
   if (!document.getElementById('itemsTitle')) {
     const div = document.createElement('section');
     div.classList.add('displayedObj');
@@ -43,6 +49,9 @@ const displayBerry = async (id) => {
   const response = await fetch(`https://pokeapi.co/api/v2/berry/${id}`);
   const berry = await response.json();
   const berryPage = document.getElementById('berry-article');
+  berryPage.classList.add('d-flex');
+  berryPage.classList.add('flex-column');
+  berryPage.classList.add('align-items-center');
   if (!document.getElementById('berriesTitle')) {
     const div = document.createElement('section');
     div.classList.add('displayedObj');

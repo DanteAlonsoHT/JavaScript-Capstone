@@ -74,6 +74,15 @@ berryPage.addEventListener('click', (e) => {
   document.getElementById('pokemon-article').classList.add('d-none');
   document.getElementById('item-article').classList.add('d-none');
   document.getElementById('berry-article').classList.remove('d-none');
+  document.getElementById('pokemon-article').classList.remove('d-flex');
+  document.getElementById('pokemon-article').classList.remove('flex-column');
+  document.getElementById('pokemon-article').classList.remove('align-items-center');
+  document.getElementById('item-article').classList.remove('d-flex');
+  document.getElementById('item-article').classList.remove('flex-column');
+  document.getElementById('item-article').classList.remove('align-items-center');
+  document.getElementById('berry-article').classList.remove('d-flex');
+  document.getElementById('berry-article').classList.remove('flex-column');
+  document.getElementById('berry-article').classList.remove('align-items-center');
   pokePage.classList.remove('current');
   itemPage.classList.remove('current');
   berryPage.classList.add('current');
@@ -103,6 +112,7 @@ berryPage.addEventListener('click', (e) => {
   div.classList.add('d-flex');
   div.classList.add('flex-wrap');
   berryAtcl.appendChild(div);
+  importBerries();
   AddBerryReservationsListner();
 });
 
@@ -111,6 +121,15 @@ pokePage.addEventListener('click', (e) => {
   document.getElementById('pokemon-article').classList.remove('d-none');
   document.getElementById('item-article').classList.add('d-none');
   document.getElementById('berry-article').classList.add('d-none');
+  document.getElementById('pokemon-article').classList.remove('d-flex');
+  document.getElementById('pokemon-article').classList.remove('flex-column');
+  document.getElementById('pokemon-article').classList.remove('align-items-center');
+  document.getElementById('item-article').classList.remove('d-flex');
+  document.getElementById('item-article').classList.remove('flex-column');
+  document.getElementById('item-article').classList.remove('align-items-center');
+  document.getElementById('berry-article').classList.remove('d-flex');
+  document.getElementById('berry-article').classList.remove('flex-column');
+  document.getElementById('berry-article').classList.remove('align-items-center');
   pokePage.classList.add('current');
   itemPage.classList.remove('current');
   berryPage.classList.remove('current');
@@ -139,6 +158,7 @@ pokePage.addEventListener('click', (e) => {
   div.classList.add('d-flex');
   div.classList.add('flex-wrap');
   pokeAtcl.appendChild(div);
+  importPokemon();
   AddPokeReservationsListner();
 });
 
@@ -147,6 +167,15 @@ itemPage.addEventListener('click', (e) => {
   document.getElementById('pokemon-article').classList.add('d-none');
   document.getElementById('item-article').classList.remove('d-none');
   document.getElementById('berry-article').classList.add('d-none');
+  document.getElementById('pokemon-article').classList.remove('d-flex');
+  document.getElementById('pokemon-article').classList.remove('flex-column');
+  document.getElementById('pokemon-article').classList.remove('align-items-center');
+  document.getElementById('item-article').classList.remove('d-flex');
+  document.getElementById('item-article').classList.remove('flex-column');
+  document.getElementById('item-article').classList.remove('align-items-center');
+  document.getElementById('berry-article').classList.remove('d-flex');
+  document.getElementById('berry-article').classList.remove('flex-column');
+  document.getElementById('berry-article').classList.remove('align-items-center');
   pokePage.classList.remove('current');
   itemPage.classList.add('current');
   berryPage.classList.remove('current');
@@ -176,6 +205,6 @@ itemPage.addEventListener('click', (e) => {
   div.classList.add('d-flex');
   div.classList.add('flex-wrap');
   itemAtcl.appendChild(div);
-
+  importItems();
   AddItemReservationsListner();
 });

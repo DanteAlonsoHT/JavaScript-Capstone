@@ -11,7 +11,7 @@ const postComment = async (objName, userName, content) => {
     .then((json) => console.log(json));
 };
 
-const getItemComments = async (objName) => {
+const getItemComments = async (objName, category) => {
   /* eslint-disable-next-line */
   const response = await fetch(`${commentURL}?item_id=${objName}`, {
     mode: 'cors',
@@ -67,6 +67,13 @@ const getItemComments = async (objName) => {
             commentsHeading.innerText = `Comments (1)`;
           } else {
             commentsHeading.innerText = `Comments (${parseInt(data.length) + 1})`;
+          }
+          if (category === 'pokemon') {
+            document.getElementById('poke').click();
+          } else if (category === 'item') {
+            document.getElementById('item').click();
+          } else if (category === 'berry') {
+            document.getElementById('berry').click();
           }
         });
       }
