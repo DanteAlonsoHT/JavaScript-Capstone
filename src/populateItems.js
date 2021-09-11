@@ -10,19 +10,21 @@ const populateItems = (list) => {
     const div = document.createElement('section');
     div.innerHTML = `
         <img class="card_img" alt="item-${index + 1}" src="${element.sprite}">
-        <h4>${element.name}</h4>
+
+        <div class="container w-75 d-flex links px-5">
+          <h4>${element.name}</h4>
+          <a class="btn custom-link" href="#" id="like-item-${index + 1}"> like</a>
+        </div>
         <p>Item ID: ${element.id}</p>
         <p>category: ${element.category}</p>
-
-        
+        <p class="container w-50 text-end" id="like-ITEM-${index + 1}-counter"></p>
         <div class="d-inline links">
-           <a class="btn custom-link" href="#" id="like-item-${index + 1}"> like</a>
-          <a class="btn custom-link" href="#" id="comment-item-${index + 1}"> comment</a>
+           <a class="btn custom-link" href="#" id="comment-item-${index + 1}"> comment</a>
           <a class="btn custom-link" href="#" id="reserve-item-${index + 1}"> reserve</a>
         </div>`;
     div.classList.add('block');
     itemsPage.appendChild(div);
-    getLikes(element.name, `like-item-${index + 1}`);
+    getLikes(element.name, `like-item-${index + 1}-counter`);
     const commentLink = document.getElementById(`comment-item-${index + 1}`);
     commentLink.addEventListener('click', (e) => {
       e.preventDefault();
@@ -35,7 +37,7 @@ const populateItems = (list) => {
       if (!likeLink.classList.contains('liked')) {
         likeLink.classList.add('liked');
         sendLike(element.name);
-        getLikes(element.name, `like-item-${index + 1}`);
+        getLikes(element.name, `like-item-${index + 1}-counter`);
       }
     });
   });

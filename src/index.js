@@ -9,7 +9,7 @@ import displayReservationById from './reservationPage';
 import { loadReservations } from './involvementReservationAPI';
 import css from './styles.css';
 
-import importLikes from './importLikes';
+
 
 const pokePage = document.getElementById('poke');
 const itemPage = document.getElementById('item');
@@ -103,7 +103,6 @@ berryPage.addEventListener('click', (e) => {
   div.classList.add('d-flex');
   div.classList.add('flex-wrap');
   berryAtcl.appendChild(div);
-  importBerries();
   AddBerryReservationsListner();
 });
 
@@ -140,7 +139,6 @@ pokePage.addEventListener('click', (e) => {
   div.classList.add('d-flex');
   div.classList.add('flex-wrap');
   pokeAtcl.appendChild(div);
-  importPokemon();
   AddPokeReservationsListner();
 });
 
@@ -178,6 +176,6 @@ itemPage.addEventListener('click', (e) => {
   div.classList.add('d-flex');
   div.classList.add('flex-wrap');
   itemAtcl.appendChild(div);
-  importItems();
+
   AddItemReservationsListner();
 });

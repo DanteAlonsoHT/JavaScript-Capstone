@@ -12,19 +12,23 @@ const populatePokemon = (list) => {
     const div = document.createElement('section');
     div.innerHTML = `
         <img class="card_img" alt="pokemon-${index + 1}" src="${element.sprite}">
-        <h4>${element.name}</h4>
-        <p>Pokedex ID: ${index + 1}</p>
-        <p>Weight: ${element.weight}</p>
-        <p>Height: ${element.height}</p>
-        <div class="d-inline links">
+        <div class="container w-50 d-flex links px-4">
+          <h4>${element.name}</h4>
           <a class="btn custom-link fix" href="#" id="like-pokemon-${index + 1}"> like</a>
-          <a class="btn custom-link fix" href="#" id="comment-pokemon-${index + 1}"> comment</a>
-          <a class="btn custom-link fix" href="#" id="reserve-pokemon-${index + 1}"> reserve</a>
+        
+        </div>
+          <p>Pokedex ID: ${index + 1}</p>
+          <p>Weight: ${element.weight}</p>
+          <p>Height: ${element.height}</p>
+          <p class="container w-50 text-end" id="like-pokemon-${index + 1}-counter"></p>
+        <div class="d-inline links">   
+          <a class="btn custom-link " href="#" id="comment-pokemon-${index + 1}"> comment</a>
+          <a class="btn custom-link " href="#" id="reserve-pokemon-${index + 1}"> reserve</a>
         </div>`;
 
-    div.classList.add('block');
+    div.classList.add('d-flex', 'flex-column', 'align-items-center', 'block');
     pokePage.appendChild(div);
-    getLikes(element.name, `like-pokemon-${index + 1}`);
+    getLikes(element.name, `like-pokemon-${index + 1}-counter`);
 
     const commentLink = document.getElementById(`comment-pokemon-${index + 1}`);
     commentLink.addEventListener('click', (e) => {
@@ -38,7 +42,7 @@ const populatePokemon = (list) => {
       if (!likeLink.classList.contains('liked')) {
         likeLink.classList.add('liked');
         sendLike(element.name);
-        getLikes(element.name, `like-pokemon-${index + 1}`);
+        getLikes(element.name, `like-pokemon-${index + 1}-counter`);
       }
     });
   });

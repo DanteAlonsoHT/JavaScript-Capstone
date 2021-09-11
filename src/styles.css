@@ -40,7 +40,7 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 20vw;
+  width: 28vw;
   border-radius: 10px;
   border-width: 2px;
   border-color: black;
@@ -49,6 +49,7 @@ h2 {
   background-color: rgb(219, 33, 0);
   margin: 10px 32px 10px 32px;
 }
+
 
 img {
   width: 10vw;
