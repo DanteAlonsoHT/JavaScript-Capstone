@@ -4,6 +4,7 @@
 
 > This project is our final Capstone for the JavaScript module at Microverse. Hop in and visualize, comment, like, and reserve pokemon, items and berries from the amazing world of Pokemon.
 
+[Click here to see a video presentation of this project](https://drive.google.com/file/d/17LulSfMXaTSwENSR0oelLcz7pxRMSSEj/view?usp=sharing).
 
 ![screenshot](./src/screenshot.PNG)
 
