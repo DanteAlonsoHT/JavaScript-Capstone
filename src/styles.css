@@ -39,7 +39,8 @@ h2 {
   border-radius: 15px;
 }
 
-.block, .displayedObj {
+.block,
+.displayedObj {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -52,7 +53,6 @@ h2 {
   background-color: rgb(219, 33, 0);
   margin: 10px 32px 10px 32px;
 }
-
 
 img {
   width: 10vw;
@@ -126,7 +126,8 @@ footer {
 }
 
 .reservationSection label,
-.reservationSection input .reservationSection button {
+.reservationSection input,
+.reservationSection button {
   font-size: 12px;
 }
 

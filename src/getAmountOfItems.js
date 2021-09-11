@@ -1,5 +1,3 @@
-const getAmountOfItems = (list) => {
-    return list.length;
-}
+const getAmountOfItems = (list) => list.length;
 
 export default getAmountOfItems;

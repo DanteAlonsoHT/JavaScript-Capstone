@@ -6,9 +6,7 @@ const postComment = async (objName, userName, content) => {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ item_id: objName, username: userName, comment: content }),
-  })
-    .then((response) => response)
-    .then((json) => console.log(json));
+  });
 };
 
 const getItemComments = async (objName, category) => {
@@ -67,9 +65,9 @@ const getItemComments = async (objName, category) => {
           newCommentLi.innerHTML = `<strong>${date} ${name}:</strong> ${insights}`;
           commentUl.appendChild(newCommentLi);
           if (!data.length) {
-            commentsHeading.innerText = `Comments (1)`;
+            commentsHeading.innerText = 'Comments (1)';
           } else {
-            commentsHeading.innerText = `Comments (${parseInt(data.length) + 1})`;
+            commentsHeading.innerText = `Comments (${parseInt(data.length, 10) + 1})`;
           }
           if (category === 'pokemon') {
             document.getElementById('poke').click();

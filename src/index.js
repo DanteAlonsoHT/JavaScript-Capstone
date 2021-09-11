@@ -9,8 +9,6 @@ import displayReservationById from './reservationPage';
 import { loadReservations } from './involvementReservationAPI';
 import css from './styles.css';
 
-
-
 const pokePage = document.getElementById('poke');
 const itemPage = document.getElementById('item');
 const berryPage = document.getElementById('berry');
@@ -29,7 +27,6 @@ const AddPokeReservationsListner = () => {
   });
 };
 
-
 const AddItemReservationsListner = () => {
   const itemContent = document.getElementById('itemPage');
 
@@ -44,7 +41,6 @@ const AddItemReservationsListner = () => {
   });
 };
 
-
 const AddBerryReservationsListner = () => {
   const berryContent = document.getElementById('berryPage');
 
@@ -58,7 +54,6 @@ const AddBerryReservationsListner = () => {
     }
   });
 };
-
 
 makePokemonPage();
 makeBerryPage();

@@ -2,19 +2,19 @@ const idInvolvementAPI = 'WeWaTSWdgI5EoHhdFxch';
 
 const urlAPI = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${idInvolvementAPI}/reservations`;
 
-const reservationCounter = (result, itemId, reservationsHTML) =>  {
-   let totalReservations = 0;
-   let reservationTitleAfterCounter = '';
-   if (result[0] !== undefined) {
-      result.forEach((reservation, index) => {
-         reservationsHTML.innerHTML += `<li id="listElement-${itemId}-${index + 1}}">${reservation.date_start} - ${reservation.date_end} by ${reservation.username}</li>`;
-         totalReservations = index + 1;
-         reservationTitleAfterCounter = `Reservations (${totalReservations})`;
-      });
-   } else {
-      reservationTitleAfterCounter = `Reservations (0)`;
-   }
-   return reservationTitleAfterCounter;
+const reservationCounter = (result, itemId, reservationsHTML) => {
+  let totalReservations = 0;
+  let reservationTitleAfterCounter = '';
+  if (result[0] !== undefined) {
+    result.forEach((reservation, index) => {
+      reservationsHTML.innerHTML += `<li id="listElement-${itemId}-${index + 1}}">${reservation.date_start} - ${reservation.date_end} by ${reservation.username}</li>`;
+      totalReservations = index + 1;
+      reservationTitleAfterCounter = `Reservations (${totalReservations})`;
+    });
+  } else {
+    reservationTitleAfterCounter = 'Reservations (0)';
+  }
+  return reservationTitleAfterCounter;
 };
 
 const loadReservations = async (itemId) => {
@@ -32,6 +32,7 @@ const createReservation = async (typeObj, idObj) => {
   const authorName = document.getElementById(`yourNameTextId-${typeObj}-${idObj}`).value;
   const startDate = document.getElementById(`startDateId-${typeObj}-${idObj}`).value;
   const endDate = document.getElementById(`endDateId-${typeObj}-${idObj}`).value;
+
   await fetch(urlAPI, {
     method: 'POST',
     headers: {
@@ -50,8 +51,7 @@ const createReservation = async (typeObj, idObj) => {
     .then((response) => {
       loadReservations(`${typeObj}-${idObj}`);
       response.text();
-    })
-    .then((messages) => { console.log(messages); });
+    });
 };
 
 export { createReservation, loadReservations };
