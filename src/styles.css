@@ -1,0 +1,173 @@
+.invisible {
+  display: none;
+}
+
+body {
+  background-color: rgb(153, 241, 241);
+  font-family: sans-serif;
+}
+
+h2 {
+  text-align: center;
+}
+
+.navbar {
+  background-color: rgb(219, 33, 0);
+  height: 12vh;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-width: 6px;
+  border-bottom-color: black;
+  border-bottom-style: solid;
+}
+
+.custom-link,
+.nav-link {
+  font-size: 20px;
+  color: black;
+  transition: 0.2s;
+}
+
+.custom-link:hover,
+.nav-link:visited,
+.nav-link:focus,
+.current,
+.disabled,
+.nav-link:hover {
+  color: black;
+  background-color: rgb(196, 29, 0);
+  border-radius: 15px;
+}
+
+.block,
+.displayedObj {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 28vw;
+  border-radius: 10px;
+  border-width: 2px;
+  border-color: black;
+  border-style: solid;
+  height: max-content;
+  background-color: rgb(219, 33, 0);
+  margin: 10px 32px 10px 32px;
+}
+
+img {
+  width: 10vw;
+}
+
+footer {
+  background-color: rgb(219, 33, 0);
+  height: 4vh;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-top-width: 2px;
+  border-top-color: black;
+  border-top-style: solid;
+}
+
+#nav-logo {
+  height: 9vh;
+  width: 9vh;
+  transition: 1s;
+}
+
+.links {
+  padding: 2px;
+  margin: 2px;
+  display: inline-block;
+}
+
+.liked {
+  background-color: yellow;
+}
+
+.fix {
+  font-size: 14px;
+  width: min-content;
+}
+
+#nav-logo:hover {
+  transform: rotate(180deg);
+}
+
+.reservationSection {
+  position: fixed;
+  display: flex;
+  padding: 1rem;
+  border-radius: 3rem;
+  min-width: 300px;
+  max-width: 550px;
+  top: 3.5rem;
+  width: 70%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(219, 33, 0);
+  border: 2px solid #000;
+  color: antiquewhite;
+  z-index: 2;
+}
+
+.reservationSection p,
+.reservationSection li {
+  font-size: 10px;
+  margin: 2px;
+}
+
+.reservationSection img {
+  height: 86px;
+  width: 86px;
+  margin: 0;
+}
+
+.reservationSection label,
+.reservationSection input,
+.reservationSection button {
+  font-size: 12px;
+}
+
+.reservationSection form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.reservationSection form label {
+  width: 80px;
+}
+
+.reservationSection .btn,
+.reservationSection form button {
+  background-color: rgb(196, 29, 0);
+  color: #000;
+  border-radius: 12px;
+}
+
+.reservationSection .btn:hover,
+.reservationSection form button:hover {
+  opacity: 40%;
+}
+
+.reservationSection ul {
+  max-height: 80px;
+  overflow-y: scroll;
+  margin: 2px;
+}
+
+ul.comment-list {
+  list-style-type: none;
+}
+
+main.display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
