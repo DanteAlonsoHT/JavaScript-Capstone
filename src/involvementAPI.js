@@ -44,11 +44,14 @@ const getItemComments = async (objName, category) => {
         mainEl.appendChild(formHeading);
         const commentForm = document.createElement('form');
         commentForm.innerHTML = `
-          <input id="commenter-name" name="name" type="text" placeholder="Your Name" required></input>
+          <input id="commenter-name" name="name" type="text" placeholder="Your Name" class="form-control" required></input>
           <br>
-          <textarea id="comment-insights" name="insights" placeholder="Your Insights" required></textarea>
+          <textarea id="comment-insights" name="insights" placeholder="Your Insights" class="form-control" required></textarea>
           <br>
-          <button id="commentBtn" type="submit">Comment</button>`;
+          <button id="commentBtn" type="submit" class="btn btn-outline-danger">Comment</button>`;
+        commentForm.classList.add('d-flex');
+        commentForm.classList.add('flex-column');
+        commentForm.classList.add('align-items-center');
         mainEl.appendChild(commentForm);
         commentForm.addEventListener('submit', (e) => {
           e.preventDefault();
