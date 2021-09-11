@@ -3,7 +3,7 @@ const idInvolvementAPI = 'WeWaTSWdgI5EoHhdFxch';
 const urlAPI = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${idInvolvementAPI}/reservations`;
 
 const loadReservations = async (itemId) => {
-  const response = await fetch(`${urlAPI}?itemId=${itemId}`);
+  const response = await fetch(`${urlAPI}?item_id=${itemId}`);
   const result = await response.json();
   const reservationsHTML = document.getElementById(`list-${itemId}`);
   const reservationTitle = document.getElementById(`totalReservation-${itemId}`);
