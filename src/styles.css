@@ -96,24 +96,27 @@ footer {
 .reservationSection {
   position: fixed;
   display: flex;
-  padding: 4rem 1rem;
+  padding: 1rem;
   border-radius: 3rem;
   min-width: 300px;
   max-width: 550px;
-  top: 1rem;
+  top: 3.5rem;
   width: 70%;
   left: 50%;
   transform: translate(-50%, 0);
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: aliceblue;
+  background-color: rgb(219, 33, 0);
+  border: 2px solid #000;
+  color: antiquewhite;
   z-index: 2;
 }
 
 .reservationSection p,
 .reservationSection li {
   font-size: 10px;
+  margin: 2px;
 }
 
 .reservationSection img {
@@ -139,9 +142,22 @@ footer {
   width: 80px;
 }
 
+.reservationSection .btn,
+.reservationSection form button {
+  background-color: rgb(196, 29, 0);
+  color: #000;
+  border-radius: 12px;
+}
+
+.reservationSection .btn:hover,
+.reservationSection form button:hover {
+  opacity: 40%;
+}
+
 .reservationSection ul {
-  max-height: 100px;
+  max-height: 80px;
   overflow-y: scroll;
+  margin: 2px;
 }
 
 ul.comment-list {
