@@ -1,4 +1,4 @@
-const loadReservations = (result) => {
+const reservationCounterMock = (result) => {
   let totalReservations = 0;
   if (result !== undefined) {
     result.forEach((value, index) => {
@@ -10,4 +10,4 @@ const loadReservations = (result) => {
   return totalReservations;
 };
 
-export default loadReservations;
+export default reservationCounterMock;
