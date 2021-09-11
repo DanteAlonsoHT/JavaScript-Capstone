@@ -21,15 +21,18 @@ h2 {
   border-bottom-style: solid;
 }
 
-.custom-link .nav-link {
+.custom-link,
+.nav-link {
   font-size: 20px;
   color: black;
   transition: 0.2s;
 }
 
-.custom-link,
+.custom-link:hover,
 .nav-link:visited,
+.nav-link:focus,
 .current,
+.disabled,
 .nav-link:hover {
   color: black;
   background-color: rgb(196, 29, 0);

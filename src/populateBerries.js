@@ -13,7 +13,7 @@ const populateBerries = (list) => {
     div.innerHTML = `
       <div class="container w-50 d-flex links px-4">
           <h4>${element.name}</h4>
-          <a class="btn custom-link" href="#" id="like-berry-${index + 1}"> like</a>
+          <a class="btn custom-link fix" href="#" id="like-berry-${index + 1}"> like</a>
       </div>
         <p>Item ID: ${element.id}</p>
         <p>max harvest: ${element.maxHarvest}</p>

@@ -13,7 +13,7 @@ const populateItems = (list) => {
 
         <div class="container w-75 d-flex links px-5">
           <h4>${element.name}</h4>
-          <a class="btn custom-link" href="#" id="like-item-${index + 1}"> like</a>
+          <a class="btn custom-link fix" href="#" id="like-item-${index + 1}"> like</a>
         </div>
         <p>Item ID: ${element.id}</p>
         <p>category: ${element.category}</p>
