@@ -1,4 +1,4 @@
-import loadReservations from './__mockReservation__';
+import reservationCounterMock from './__mockReservation__';
 import loadComments from './__mockComment__';
 import getAmountOfItems from './getAmountOfItems';
 
@@ -23,20 +23,20 @@ describe('For Creating Reservations', () => {
       expect(allReservationsByPokemons.length).toEqual(6);
     });
 
-    test('Check the amount returned by loadReservations method', () => {
-      const reservationAmount = loadReservations(initialReservations);
+    test('Check the amount returned by reservationCounterMock method', () => {
+      const reservationAmount = reservationCounterMock(initialReservations);
       expect(reservationAmount).toEqual(0);
     });
 
     test('Add a new reservation', () => {
       const newReservation = [{ username: 'Dante Alonso', date_start: '2021-09-09', date_end: '2021-09-10' }];
       initialReservations.push(newReservation);
-      const reservationAmount = loadReservations(initialReservations);
+      const reservationAmount = reservationCounterMock(initialReservations);
       expect(reservationAmount).toEqual(1);
     });
 
     test('The new reservations persists', () => {
-      const reservationAmount = loadReservations(initialReservations);
+      const reservationAmount = reservationCounterMock(initialReservations);
       expect(reservationAmount).toEqual(1);
     });
 
@@ -45,13 +45,13 @@ describe('For Creating Reservations', () => {
       const newReservation3 = { username: 'Dante Alonso', date_start: '2021-09-12', date_end: '2021-09-13' };
       initialReservations.push(newReservation2);
       initialReservations.push(newReservation3);
-      const reservationAmount = loadReservations(initialReservations);
+      const reservationAmount = reservationCounterMock(initialReservations);
       expect(reservationAmount).toEqual(3);
     });
 
     test('Return an error when the parameter is undefined', () => {
       const reservationNotValid = undefined;
-      const reservationAmount = loadReservations(reservationNotValid);
+      const reservationAmount = reservationCounterMock(reservationNotValid);
       expect(reservationAmount).toEqual('Error 404: API not found');
     });
   });
