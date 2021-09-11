@@ -4,6 +4,7 @@
 
 body {
   background-color: rgb(153, 241, 241);
+  font-family: sans-serif;
 }
 
 h2 {
@@ -86,6 +87,57 @@ footer {
 
 #nav-logo:hover {
   transform: rotate(180deg);
+}
+
+.reservationSection {
+  position: fixed;
+  display: flex;
+  padding: 4rem 1rem;
+  border-radius: 3rem;
+  min-width: 300px;
+  max-width: 550px;
+  top: 1rem;
+  width: 70%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: aliceblue;
+  z-index: 2;
+}
+
+.reservationSection p,
+.reservationSection li {
+  font-size: 10px;
+}
+
+.reservationSection img {
+  height: 86px;
+  width: 86px;
+  margin: 0;
+}
+
+.reservationSection label,
+.reservationSection input .reservationSection button {
+  font-size: 12px;
+}
+
+.reservationSection form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.reservationSection form label {
+  width: 80px;
+}
+
+.reservationSection ul {
+  max-height: 100px;
+  overflow-y: scroll;
 }
 
 ul.comment-list {
