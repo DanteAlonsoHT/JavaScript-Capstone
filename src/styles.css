@@ -58,6 +58,10 @@ img {
   width: 10vw;
 }
 
+section {
+  color: aliceblue;
+}
+
 footer {
   background-color: rgba(179, 37, 12, 0.959);
   height: 4vh;
@@ -81,7 +85,7 @@ footer {
 }
 
 .liked {
-  background-color: yellow;
+  background-color:rgb(226, 120, 44);
 }
 
 .fix {
