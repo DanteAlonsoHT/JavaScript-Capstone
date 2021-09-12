@@ -25,17 +25,17 @@ const populateBerries = (list) => {
 
     div.classList.add('block');
     berriesPage.appendChild(div);
-    getLikes(element.name, `like-berry-${index + 1}-counter`);
     const commentLink = document.getElementById(`comment-berry-${index + 1}`);
     commentLink.addEventListener('click', (e) => {
       e.preventDefault();
       gotToCommentPage(index + 1, 'berry', element.name);
     });
+    getLikes(element.name, `like-berry-${index + 1}-counter`);
 
     const likeLink = document.getElementById(`like-berry-${index + 1}`);
     likeLink.addEventListener('mouseup', (e) => {
-      e.preventDefault();
       if (!likeLink.classList.contains('liked')) {
+        e.preventDefault();
         likeLink.classList.add('liked');
         sendLike(element.name);
         getLikes(element.name, `like-berry-${index + 1}-counter`);
