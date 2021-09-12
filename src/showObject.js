@@ -1,25 +1,22 @@
-const displayPokemon = async (id) => {
+const displayPokemon = async (id, popupComments) => {
   const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
   const pokemon = await response.json();
-  const pokePage = document.getElementById('pokemon-article');
+  const pokePage = document.createElement('section');
   pokePage.classList.add('d-flex');
   pokePage.classList.add('flex-column');
   pokePage.classList.add('align-items-center');
-  if (!document.getElementById('pokeTitle')) {
-    const div = document.createElement('section');
-    div.classList.add('displayedObj');
-    div.innerHTML = `
-    <img class="card_img" alt="pokemon-${pokemon.id}" src="${pokemon.sprites.front_default}">
-    <h4>${pokemon.name}</h4>
-    <p>Pokedex ID: ${pokemon.id}</p>
-    <p>Weight: ${pokemon.weight}</p>
-    <p>Height: ${pokemon.height}</p>`;
-    const pokeTitle = document.createElement('h4');
-    pokeTitle.id = 'pokeTitle';
-    pokePage.appendChild(pokeTitle);
-    pokeTitle.innerText = `Showing ${pokemon.name}`;
-    pokePage.appendChild(div);
-  }
+  const div = document.createElement('section');
+  div.classList.add('displayedObj');
+  div.innerHTML = `
+  <img class="card_img" alt="pokemon-${pokemon.id}" src="${pokemon.sprites.front_default}">
+  <h4>${pokemon.name}</h4>
+  <div class="d-flex d-md-block m-3">
+  <p>Pokedex ID: ${pokemon.id}</p>
+  <p>Weight: ${pokemon.weight}</p>
+  <p>Height: ${pokemon.height}</p>
+  </div>`
+  ;
+  popupComments.appendChild(div);
 };
 
 const displayItem = async (id) => {

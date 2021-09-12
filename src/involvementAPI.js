@@ -9,7 +9,7 @@ const postComment = async (objName, userName, content) => {
   });
 };
 
-const getItemComments = async (objName, category) => {
+const getItemComments = async (objName, category, sectionComment) => {
   /* eslint-disable-next-line */
   const response = await fetch(`${commentURL}?item_id=${objName}`, {
     mode: 'cors',
@@ -17,7 +17,6 @@ const getItemComments = async (objName, category) => {
   })
     .then((response) => response.json())
     .then((data) => {
-      const mainEl = document.querySelector('main');
       if (!document.querySelector('form')) {
         const commentUl = document.createElement('ul');
         commentUl.classList.add('comment-list');
@@ -26,7 +25,7 @@ const getItemComments = async (objName, category) => {
           commentLi.innerHTML = `<strong>${data[i].creation_date} ${data[i].username}:</strong> ${data[i].comment}`;
           commentUl.appendChild(commentLi);
         }
-        mainEl.appendChild(commentUl);
+        sectionComment.appendChild(commentUl);
         const commentsHeading = document.createElement('h3');
         if (!data.length) {
           commentsHeading.innerText = 'Comments (0)';
@@ -34,23 +33,23 @@ const getItemComments = async (objName, category) => {
           commentsHeading.innerText = `Comments (${data.length})`;
         }
         commentsHeading.classList.add('form-heading');
-        mainEl.appendChild(commentsHeading);
-        mainEl.classList.add('display');
+        sectionComment.appendChild(commentsHeading);
+        sectionComment.classList.add('display');
         const formHeading = document.createElement('h4');
         formHeading.innerText = 'Add a comment';
         formHeading.classList.add('form-heading');
-        mainEl.appendChild(formHeading);
+        sectionComment.appendChild(formHeading);
         const commentForm = document.createElement('form');
         commentForm.innerHTML = `
           <input id="commenter-name" name="name" type="text" placeholder="Your Name" class="form-control" required></input>
           <br>
           <textarea id="comment-insights" name="insights" placeholder="Your Insights" class="form-control" required></textarea>
           <br>
-          <button id="commentBtn" type="submit" class="btn btn-outline-danger">Comment</button>`;
+          <button id="commentBtn" type="submit" class="btn btn-outline-light">Comment</button>`;
         commentForm.classList.add('d-flex');
         commentForm.classList.add('flex-column');
         commentForm.classList.add('align-items-center');
-        mainEl.appendChild(commentForm);
+        sectionComment.appendChild(commentForm);
         commentForm.addEventListener('submit', (e) => {
           e.preventDefault();
           const name = document.getElementById('commenter-name').value;
@@ -70,11 +69,28 @@ const getItemComments = async (objName, category) => {
             commentsHeading.innerText = `Comments (${parseInt(data.length, 10) + 1})`;
           }
           if (category === 'pokemon') {
-            document.getElementById('poke').click();
+            commentForm.reset();
           } else if (category === 'item') {
-            document.getElementById('item').click();
+            commentForm.reset();
           } else if (category === 'berry') {
-            document.getElementById('berry').click();
+            commentForm.reset();
+          }
+        });
+      }
+      document.querySelector('main').appendChild(sectionComment);
+      document.querySelector('body').addEventListener('click', (ev) => {
+        const currentPopUp = document.querySelector('.popupComments');
+        if (ev.target !== currentPopUp && currentPopUp) {
+          if (!currentPopUp.contains(ev.target)) {
+            document.querySelector('.popupComments').remove();
+          }
+        }
+      });
+      if (document.querySelectorAll('.popupComments').length > 1) {
+        const allReservations = document.querySelectorAll('.popupComments');
+        allReservations.forEach((reservationPopup, index) => {
+          if (index !== 0) {
+            reservationPopup.remove();
           }
         });
       }
