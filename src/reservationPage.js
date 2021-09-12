@@ -26,8 +26,8 @@ const displayReservationById = async (typeObj, idObj) => {
         <h6>${pokemon.name}</h6>
         <p>Pokedex ID: ${pokemon.id}</p>
         <div class="d-flex">
-            <p class="me-3">Weight: ${pokemon.weight}</p>
-            <p class="ms-3">Height: ${pokemon.height}</p>
+            <p class="me-2">Weight: ${pokemon.weight}</p>
+            <p class="ms-2">Height: ${pokemon.height}</p>
         </div>
         `;
   } else if (typeObj === 'item') {
@@ -41,8 +41,8 @@ const displayReservationById = async (typeObj, idObj) => {
         <img class="card_img" alt="item-${item.id}" src="${item.sprite}">
         <h6>${item.name}</h6>
         <div class="d-flex">
-            <p class="me-3">Item ID: ${item.id}</p>
-            <p class="ms-3">category: ${item.category}</p>
+            <p class="me-2">Item ID: ${item.id}</p>
+            <p class="ms-2">category: ${item.category}</p>
         </div>
         `;
   } else if (typeObj === 'berry') {
@@ -54,34 +54,45 @@ const displayReservationById = async (typeObj, idObj) => {
     description = `
         <h6>${berry.name}</h6>
         <div class="d-flex">
-            <p class="me-3">Item ID: ${berry.id}</p>
-            <p class="ms-3">max harvest: ${berry.maxHarvest}</p>
+            <p class="me-2">Item ID: ${berry.id}</p>
+            <p class="ms-2">max harvest: ${berry.maxHarvest}</p>
         </div>
         `;
   }
 
   const div = document.createElement('section');
   div.className = `currentSection-${typeObj}-${idObj} reservationSection`;
-  div.innerHTML = `${description}
-        <div>
-        <a class="btn btn-outline-danger" href="#" id="like-${typeObj}-${idObj}">
-        ${buttonLike.textContent.indexOf('like') !== -1 ? buttonLike.textContent : 'like'}
-        </a>
-        <a class="btn btn-outline-danger" href="#" id="comment-${typeObj}-${idObj}"> comment</a>
+  div.innerHTML = `
+        <div class="d-flex align-items-center m-3 p-1">
+          <div class="d-flex flex-column justify-content-center align-items-center">
+            ${description}
+            <div>
+              <a class="btn btn-outline-light" href="#" id="like-${typeObj}-${idObj}">
+              ${buttonLike.textContent.indexOf('like') !== -1 ? buttonLike.textContent : 'like'}
+              </a>
+              <a class="btn btn-outline-light" href="#" id="comment-${typeObj}-${idObj}"> comment</a>
+            </div>
+          </div>
+          <div class="d-flex flex-column justify-content-center align-items-center">
+            <h5 id="totalReservation-${typeObj}-${idObj}">Reservations ()</h5>
+            <ul id="list-${typeObj}-${idObj}"></ul>
+          </div>
         </div>
 
-        <h5 id="totalReservation-${typeObj}-${idObj}">Reservations ()</h5>
-        <ul id="list-${typeObj}-${idObj}">
-        </ul>
-
         <form id="formReservation-${typeObj}-${idObj}">
+          <div class="input-group input-group-sm mb-3">
             <label for="yourNameText-${typeObj}-${idObj}">Your Name</label>
             <input type="text" id="yourNameTextId-${typeObj}-${idObj}" name="yourNameText-${typeObj}-${idObj}" class="form-control" required>
-            <label for="startDate-${typeObj}-${idObj}">Start Date</label>
-            <input type="date" id="startDateId-${typeObj}-${idObj}" name="startDate-${typeObj}-${idObj}" class="form-control" required>
-            <label for="endDate-${typeObj}-${idObj}">End Date</label>
-            <input type="date" id="endDateId-${typeObj}-${idObj}" name="endDate-${typeObj}-${idObj}" class="form-control" required>
-            <button type="submit" id="submitReserve-${typeObj}-${idObj}" class="btn btn-outline-danger">Submit</button>
+          </div>
+          <div class="input-group input-group-sm mb-3">
+          <label for="startDate-${typeObj}-${idObj}">Start Date</label>
+          <input type="date" id="startDateId-${typeObj}-${idObj}" name="startDate-${typeObj}-${idObj}" class="form-control" required>
+          </div>
+          <div class="input-group input-group-sm mb-3">
+          <label for="endDate-${typeObj}-${idObj}">End Date</label>
+          <input type="date" id="endDateId-${typeObj}-${idObj}" name="endDate-${typeObj}-${idObj}" class="form-control" required>
+          </div>
+            <button type="submit" id="submitReserve-${typeObj}-${idObj}" class="btn btn-outline-light w-50">Submit</button>
         </form>
         `;
   if (typeObj === 'pokemon') {
