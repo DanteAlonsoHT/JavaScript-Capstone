@@ -14,16 +14,15 @@ const populatePokemon = (list) => {
         <img class="card_img" alt="pokemon-${index + 1}" src="${element.sprite}">
         <div class="container w-50 d-flex links px-4">
           <h4>${element.name}</h4>
-          <a class="btn custom-link fix" href="#" id="like-pokemon-${index + 1}"> like</a>
-        
         </div>
           <p>Pokedex ID: ${index + 1}</p>
           <p>Weight: ${element.weight}</p>
           <p>Height: ${element.height}</p>
           <p class="container w-50 text-end" id="like-pokemon-${index + 1}-counter"></p>
-        <div class="d-inline links">   
-          <a class="btn custom-link " href="#" id="comment-pokemon-${index + 1}"> comment</a>
-          <a class="btn custom-link " href="#" id="reserve-pokemon-${index + 1}"> reserve</a>
+        <div class="d-inline links">
+          <a class="btn btn-outline-light" href="#" id="like-pokemon-${index + 1}"> like</a>
+          <a class="btn btn-outline-light" href="#" id="comment-pokemon-${index + 1}"> comment</a>
+          <a class="btn btn-outline-light" href="#" id="reserve-pokemon-${index + 1}"> reserve</a>
         </div>`;
 
     div.classList.add('d-flex', 'flex-column', 'align-items-center', 'block');
