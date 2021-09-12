@@ -85,7 +85,7 @@ footer {
 }
 
 .liked {
-  background-color:rgb(226, 120, 44);
+  background-color: rgb(226, 120, 44);
 }
 
 .fix {
@@ -185,7 +185,6 @@ main.display {
   background-color: rgba(179, 37, 12, 0.959);
   min-width: 300px;
   max-width: 550px;
-  top: 5rem;
   width: 70%;
   left: 50%;
   transform: translate(-50%, 0);

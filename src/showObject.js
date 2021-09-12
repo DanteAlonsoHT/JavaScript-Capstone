@@ -14,8 +14,7 @@ const displayPokemon = async (id, popupComments) => {
   <p>Pokedex ID: ${pokemon.id}</p>
   <p>Weight: ${pokemon.weight}</p>
   <p>Height: ${pokemon.height}</p>
-  </div>`
-  ;
+  </div>`;
   popupComments.appendChild(div);
 };
 
