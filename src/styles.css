@@ -51,7 +51,7 @@ h2 {
   border-style: solid;
   height: max-content;
   background-color: rgba(179, 37, 12, 0.959);
-  margin: 10px 32px 10px 32px;
+  margin: 0.5rem;
 }
 
 img {
@@ -160,6 +160,9 @@ footer {
 
 ul.comment-list {
   list-style-type: none;
+  max-height: 60px;
+  margin: 6px;
+  overflow-y: scroll;
 }
 
 main.display {
@@ -167,4 +170,32 @@ main.display {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.popupComments {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border: 2px solid #000;
+  border-radius: 2rem;
+  top: 5rem;
+  background-color: rgba(179, 37, 12, 0.959);
+  min-width: 300px;
+  max-width: 550px;
+  top: 5rem;
+  width: 70%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  font-size: 10px;
+}
+
+.popupComments h3,
+.popupComments h4,
+.popupComments form input,
+.popupComments form textarea {
+  font-size: 14px;
+  text-align: center;
 }
