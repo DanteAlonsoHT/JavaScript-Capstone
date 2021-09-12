@@ -12,7 +12,7 @@ h2 {
 }
 
 .navbar {
-  background-color: rgb(219, 33, 0);
+  background-color: rgb(216, 32, 0);
   height: 12vh;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -50,7 +50,7 @@ h2 {
   border-color: black;
   border-style: solid;
   height: max-content;
-  background-color: rgb(219, 33, 0);
+  background-color: rgba(179, 37, 12, 0.959);
   margin: 10px 32px 10px 32px;
 }
 
@@ -59,7 +59,7 @@ img {
 }
 
 footer {
-  background-color: rgb(219, 33, 0);
+  background-color: rgba(179, 37, 12, 0.959);
   height: 4vh;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
@@ -100,14 +100,14 @@ footer {
   border-radius: 3rem;
   min-width: 300px;
   max-width: 550px;
-  top: 3.5rem;
+  top: 5rem;
   width: 70%;
   left: 50%;
   transform: translate(-50%, 0);
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgb(219, 33, 0);
+  background-color: rgba(179, 37, 12, 0.959);
   border: 2px solid #000;
   color: antiquewhite;
   z-index: 2;
@@ -115,20 +115,20 @@ footer {
 
 .reservationSection p,
 .reservationSection li {
-  font-size: 10px;
+  font-size: 12px;
   margin: 2px;
 }
 
 .reservationSection img {
-  height: 86px;
-  width: 86px;
+  height: 96px;
+  width: 96px;
   margin: 0;
 }
 
 .reservationSection label,
 .reservationSection input,
 .reservationSection button {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .reservationSection form {
@@ -145,18 +145,11 @@ footer {
 
 .reservationSection .btn,
 .reservationSection form button {
-  background-color: rgb(196, 29, 0);
-  color: #000;
   border-radius: 12px;
 }
 
-.reservationSection .btn:hover,
-.reservationSection form button:hover {
-  opacity: 40%;
-}
-
 .reservationSection ul {
-  max-height: 80px;
+  max-height: 120px;
   overflow-y: scroll;
   margin: 2px;
 }
